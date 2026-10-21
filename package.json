@@ -1,0 +1,9 @@
+{
+  "name": "crear-paginas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Skill de Claude Code: páginas de venta con diseño profesional, publicadas en tu Cloudflare.",
+  "license": "MIT",
+  "engines": { "node": ">=20" }
+}

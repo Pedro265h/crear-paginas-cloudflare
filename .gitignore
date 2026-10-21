@@ -1,0 +1,19 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Archivos de contexto que generan algunas herramientas
+CLAUDE.md
+**/CLAUDE.md
+
+# Lo que se genera al usar o probar la skill (nunca va al repo)
+node_modules/
+.wrangler/
+.dev.vars
+*.log
+ejemplos/_vista/
