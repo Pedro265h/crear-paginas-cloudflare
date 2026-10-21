@@ -29,8 +29,8 @@ if (r.npm) {
 }
 
 const cred = leerCredenciales();
-r.token_guardado = !!cred;
-if (cred) r.token_archivo = RUTA_CREDENCIALES;
+r.token_guardado = !!cred?.token;
+if (cred?.token) r.token_archivo = RUTA_CREDENCIALES;
 
 if (r.wrangler && !args.rapido) {
   const s = quienSoy();

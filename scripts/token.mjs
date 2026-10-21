@@ -89,10 +89,10 @@ if (args.borrar) {
 }
 
 if (args.cuenta) {
-  const c = leerCredenciales();
-  if (!c) fallar('Primero guarda tu token (node scripts/token.mjs).');
+  // Sirve con token o con la sesión de `wrangler login`: los scripts publican en esa cuenta (CLOUDFLARE_ACCOUNT_ID).
+  const c = leerCredenciales() || {};
   if (!/^[0-9a-f]{32}$/.test(String(args.cuenta))) fallar('Ese id de cuenta no parece válido: son 32 letras y números (sale en `npx wrangler whoami`).');
-  const r = await revisar(c.token);
+  const r = c.token ? await revisar(c.token) : { cuentas: [] };
   const cuenta = r.cuentas.find((x) => x.id === args.cuenta) || { id: args.cuenta, nombre: '' };
   guardarCredenciales({ ...c, cuenta });
   ok(`Listo: voy a publicar en la cuenta ${cuenta.nombre || cuenta.id}.`);
@@ -101,7 +101,7 @@ if (args.cuenta) {
 
 if (args.estado) {
   const c = leerCredenciales();
-  if (!c) {
+  if (!c?.token) {
     linea('No hay token guardado en esta compu.');
     process.exit(2);
   }

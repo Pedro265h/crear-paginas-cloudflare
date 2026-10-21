@@ -175,6 +175,7 @@ export function escribirWrangler(dir, estado, plan = {}) {
     .replace('__BASE_ID__', estado.base?.id || BASE_ID_LOCAL)
     .replace('__ZONA__', estado.zona || 'America/Bogota')
     .replace('__PIXEL__', pixel)
+    .replace('__LIMITE__', String(Math.max(1, Number.parseInt(estado.limite_registros, 10) || 5)))
     .replace('__RUTAS__', rutas);
   escribir(join(dir, 'wrangler.jsonc'), t);
 }

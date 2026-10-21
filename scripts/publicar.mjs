@@ -72,7 +72,7 @@ if (args.prueba) {
   ok(`Armé sitio/ (${r.archivos.length} archivos).`);
   for (const a of r.avisos) aviso(a);
   linea('Esto es lo que haría al publicar de verdad:');
-  linea(`  1. Conectarme a Cloudflare (${leerCredenciales() ? 'con tu token guardado' : 'con tu sesión de `npx wrangler login`'}).`);
+  linea(`  1. Conectarme a Cloudflare (${leerCredenciales()?.token ? 'con tu token guardado' : 'con tu sesión de `npx wrangler login`'}).`);
   linea(`  2. ${estado.base?.id && estado.base.id !== BASE_ID_LOCAL ? 'Usar tu base de registros ' + estado.base.nombre : 'Crear tu base de registros «' + estado.base.nombre + '» (D1)'} y ponerle sus tablas (schema.sql).`);
   linea(`  3. Subir la página «${estado.nombre}» (npx wrangler deploy).`);
   if (dominios.length) linea(`  4. Conectarla a ${dominios.join(' y ')}.`);
@@ -85,7 +85,7 @@ paso('Reviso la conexión con tu cuenta de Cloudflare');
 const yo = quienSoy(dir);
 if (!yo.conectado) fallar('Tu compu no está conectada a Cloudflare.', 'Conéctala con `npx wrangler login` (un clic en el navegador) o guarda tu token con scripts/token.mjs. Guía: walkthroughs/02-cuenta-cloudflare.md y 03-token-api.md.');
 if (yo.cuentas.length > 1 && !leerCredenciales()?.cuenta?.id && !process.env.CLOUDFLARE_ACCOUNT_ID) {
-  fallar('Tu usuario tiene varias cuentas de Cloudflare y no sé en cuál publicar.', yo.cuentas.map((c) => `${c.nombre}: node scripts/token.mjs --cuenta ${c.id}`).join('\n') + '\n(Si entraste con `wrangler login`, también puedes poner CLOUDFLARE_ACCOUNT_ID.)');
+  fallar('Tu usuario tiene varias cuentas de Cloudflare y no sé en cuál publicar.', 'Elige una (sirve con token o con la sesión de `wrangler login`):\n' + yo.cuentas.map((c) => `${c.nombre}: node scripts/token.mjs --cuenta ${c.id}`).join('\n'));
 }
 ok(`Conectada${yo.correo ? ' como ' + yo.correo : ''}${yo.cuentas[0] ? ' · cuenta ' + yo.cuentas[0].nombre : ''}.`);
 

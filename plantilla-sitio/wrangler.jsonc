@@ -29,7 +29,7 @@
   "vars": {
     "ZONA_HORARIA": "__ZONA__",
     "META_PIXEL": "__PIXEL__",
-    "LIMITE_REGISTROS": "5"
+    "LIMITE_REGISTROS": "__LIMITE__"
   }__RUTAS__
   // Tu dominio propio (lo pone publicar.mjs --dominio): Cloudflare crea el registro DNS y el certificado solo.
   // "routes": [

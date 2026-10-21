@@ -17,7 +17,8 @@ export const RUTA_CREDENCIALES = join(CARPETA_CREDENCIALES, 'cloudflare.json');
 export function leerCredenciales() {
   try {
     const d = JSON.parse(readFileSync(RUTA_CREDENCIALES, 'utf8'));
-    return d && typeof d.token === 'string' && d.token ? d : null;
+    // { token?, cuenta?: { id, nombre } }: puede haber solo la cuenta elegida (si entró con `wrangler login`).
+    return d && typeof d === 'object' && (d.token || d.cuenta?.id) ? d : null;
   } catch {
     return null;
   }
@@ -47,10 +48,8 @@ export function borrarCredenciales() {
 export function entorno(extra = {}) {
   const env = { ...process.env, CI: '1', WRANGLER_SEND_METRICS: 'false', ...extra };
   const c = leerCredenciales();
-  if (c && !process.env.CLOUDFLARE_API_TOKEN) {
-    env.CLOUDFLARE_API_TOKEN = c.token;
-    if (c.cuenta?.id && !process.env.CLOUDFLARE_ACCOUNT_ID) env.CLOUDFLARE_ACCOUNT_ID = c.cuenta.id;
-  }
+  if (c?.token && !process.env.CLOUDFLARE_API_TOKEN) env.CLOUDFLARE_API_TOKEN = c.token;
+  if (c?.cuenta?.id && !process.env.CLOUDFLARE_ACCOUNT_ID) env.CLOUDFLARE_ACCOUNT_ID = c.cuenta.id;
   return env;
 }
 
