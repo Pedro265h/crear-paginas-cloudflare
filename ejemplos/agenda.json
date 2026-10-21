@@ -1,0 +1,333 @@
+{
+  "v": 1,
+  "tipo": "vsl",
+  "marca": {
+    "nombre": "Agenda Clara"
+  },
+  "seo": {
+    "titulo": "Agenda Clara · Turnos online y recordatorios por WhatsApp",
+    "descripcion": "Tus pacientes reservan solos desde tu página y Agenda Clara les recuerda el turno por WhatsApp. Menos llamadas, menos huecos en tu agenda."
+  },
+  "tema": {
+    "modo": "oscuro",
+    "colores": {
+      "fondo": "#090b12",
+      "texto": "#eef1f8",
+      "primario": "#7b8cff",
+      "acento": "#38d9c4"
+    },
+    "letras": "tecnologico",
+    "radio": "redondo",
+    "estilo": "limpio",
+    "plantilla": "clasica"
+  },
+  "conversion": {
+    "accion": "checkout",
+    "boton": "Probar 7 días gratis",
+    "url": "https://tudominio.com/pagar",
+    "campos": [
+      "nombre",
+      "correo"
+    ]
+  },
+  "video": {
+    "url": "fotos/agenda-demo.mp4",
+    "ctaSegundos": 0
+  },
+  "secciones": [
+    {
+      "id": "ag-aviso",
+      "tipo": "aviso",
+      "variante": "barra",
+      "campos": {
+        "texto": "7 días gratis · Sin tarjeta para probar · Cancela cuando quieras"
+      }
+    },
+    {
+      "id": "ag-hero",
+      "tipo": "hero",
+      "variante": "video",
+      "campos": {
+        "antetitulo": "Software de turnos para consultorios",
+        "titulo": "Tu agenda se llena sola y tus pacientes llegan a la hora",
+        "resaltado": "se llena sola",
+        "subtitulo": "Tus pacientes reservan desde tu página a cualquier hora y Agenda Clara les recuerda el turno por WhatsApp. Tú solo atiendes.",
+        "puntos": [
+          {
+            "texto": "Reservas online las 24 horas"
+          },
+          {
+            "texto": "Recordatorios por WhatsApp, automáticos"
+          },
+          {
+            "texto": "Confirmar o cambiar el turno con un mensaje"
+          }
+        ],
+        "boton": "Probar 7 días gratis",
+        "nota": "7 días gratis · Sin tarjeta · Cancela cuando quieras"
+      }
+    },
+    {
+      "id": "ag-problema",
+      "tipo": "problema",
+      "variante": "lista",
+      "campos": {
+        "antetitulo": "Lo que ya conoces",
+        "titulo": "Pasas el día contestando mensajes para dar turnos que después nadie confirma",
+        "resaltado": "que después nadie confirma",
+        "subtitulo": "Si atiendes con turno, esto te suena. Y cada hueco en la agenda es plata que no entra.",
+        "items": [
+          {
+            "texto": "Respondes el mismo «¿tienes hora para mañana?» entre paciente y paciente."
+          },
+          {
+            "texto": "Anotas turnos en el cuaderno, en el celular y en la memoria."
+          },
+          {
+            "texto": "Un paciente no llega, no avisó y ese espacio se pierde."
+          },
+          {
+            "texto": "Recordar cada turno a mano te quita la última hora del día."
+          }
+        ],
+        "cierre": "No es desorden tuyo: dar turnos por chat no escala. Lo que necesitas es que la agenda trabaje sola."
+      }
+    },
+    {
+      "id": "ag-mecanismo",
+      "tipo": "mecanismo",
+      "variante": "pasos",
+      "campos": {
+        "antetitulo": "Cómo funciona",
+        "titulo": "3 pasos: publicas tus horarios, ellos reservan y la agenda les recuerda",
+        "resaltado": "la agenda les recuerda",
+        "subtitulo": "Sin instalar nada y sin aprender un sistema complicado.",
+        "items": [
+          {
+            "titulo": "Publica tus horarios",
+            "texto": "Cargas tus servicios, cuánto dura cada uno y qué días atiendes. Te queda un link para compartir."
+          },
+          {
+            "titulo": "Tus pacientes reservan",
+            "texto": "Eligen el servicio y la hora libre desde el celular, sin escribirte. El turno aparece en tu agenda."
+          },
+          {
+            "titulo": "Agenda Clara les recuerda",
+            "texto": "Un día antes les llega un WhatsApp para confirmar o cambiar el turno. Tú ves quién confirmó."
+          }
+        ],
+        "boton": "Probar 7 días gratis",
+        "nota": "Lista en una tarde · Sin instalar nada"
+      }
+    },
+    {
+      "id": "ag-beneficios",
+      "tipo": "beneficios",
+      "variante": "tarjetas",
+      "campos": {
+        "antetitulo": "Todo en un solo lugar",
+        "titulo": "Lo que hace Agenda Clara mientras tú atiendes",
+        "resaltado": "mientras tú atiendes",
+        "subtitulo": "Las tareas que hoy te comen el día, resueltas sin que tengas que estar pendiente del celular.",
+        "items": [
+          {
+            "titulo": "Reservas online",
+            "texto": "Tu link de turnos en tu página, en tu Instagram y en tu WhatsApp."
+          },
+          {
+            "titulo": "Recordatorios por WhatsApp",
+            "texto": "Un mensaje un día antes y otro dos horas antes, con tu nombre y tu dirección."
+          },
+          {
+            "titulo": "Confirmar o reprogramar",
+            "texto": "El paciente responde con un número y la agenda se actualiza sola."
+          },
+          {
+            "titulo": "Lista de espera",
+            "texto": "Si alguien cancela, se avisa al siguiente para que tome el turno."
+          },
+          {
+            "titulo": "Ficha de cada paciente",
+            "texto": "Sus turnos anteriores y tus notas, a un toque."
+          },
+          {
+            "titulo": "Varios profesionales",
+            "texto": "Cada uno con su agenda y sus horarios, en la misma cuenta."
+          }
+        ],
+        "boton": "",
+        "nota": ""
+      }
+    },
+    {
+      "id": "ag-comparacion",
+      "tipo": "comparacion",
+      "variante": "tabla",
+      "campos": {
+        "antetitulo": "Comparación",
+        "titulo": "Dar turnos por chat te ocupa el día. Agenda Clara lo hace sola",
+        "resaltado": "lo hace sola",
+        "subtitulo": "Compara cómo trabajas hoy con una agenda que reserva y recuerda por ti.",
+        "columnaA": "Agenda Clara",
+        "columnaB": "Turnos por chat y cuaderno",
+        "filas": [
+          {
+            "a": "El paciente reserva solo, a cualquier hora",
+            "b": "Respondes cada mensaje entre consulta y consulta"
+          },
+          {
+            "a": "Recordatorio automático por WhatsApp",
+            "b": "Recordar a mano, cuando te acuerdas"
+          },
+          {
+            "a": "Ves quién confirmó y quién no",
+            "b": "Te enteras cuando el paciente no llega"
+          },
+          {
+            "a": "La lista de espera llena los huecos",
+            "b": "El turno cancelado queda vacío"
+          },
+          {
+            "a": "Tu agenda en el celular y en la computadora",
+            "b": "Turnos repartidos en el cuaderno y el chat"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ag-oferta",
+      "tipo": "oferta",
+      "variante": "dividida",
+      "campos": {
+        "antetitulo": "Elige tu plan",
+        "titulo": "Un plan para tu consultorio o para todo tu equipo",
+        "resaltado": "para todo tu equipo",
+        "subtitulo": "Pago mensual y sin permanencia. Los dos planes empiezan con 7 días gratis, sin tarjeta.",
+        "items": [
+          {
+            "texto": "Plan Consultorio: 1 profesional",
+            "valor": "US$19/mes"
+          },
+          {
+            "texto": "Plan Centro: hasta 5 profesionales",
+            "valor": "US$39/mes"
+          },
+          {
+            "texto": "Reservas online ilimitadas",
+            "valor": ""
+          },
+          {
+            "texto": "Recordatorios por WhatsApp",
+            "valor": ""
+          },
+          {
+            "texto": "Lista de espera y ficha de pacientes",
+            "valor": ""
+          },
+          {
+            "texto": "Soporte por WhatsApp",
+            "valor": ""
+          }
+        ],
+        "valorTotal": "",
+        "precioAntes": "",
+        "precio": "Desde US$19/mes",
+        "detallePrecio": "Consultorio US$19 · Centro US$39 · 7 días gratis",
+        "boton": "Probar 7 días gratis",
+        "nota": "Cancelas cuando quieras · Pagas con tarjeta"
+      }
+    },
+    {
+      "id": "ag-garantia",
+      "tipo": "garantia",
+      "variante": "sello",
+      "campos": {
+        "dias": "7",
+        "titulo": "Pruébala 7 días sin poner tu tarjeta",
+        "texto": "Configura tu agenda, comparte tu link y mira cómo llegan las reservas. Si no te sirve, no pagas nada: la prueba termina sola."
+      }
+    },
+    {
+      "id": "ag-para",
+      "tipo": "para_quien",
+      "variante": "columnas",
+      "campos": {
+        "antetitulo": "Para quién es",
+        "titulo": "Hecha para quien atiende con turno todos los días",
+        "tituloSi": "Es para ti si…",
+        "si": [
+          {
+            "texto": "Tienes un consultorio, un centro de estética o de bienestar y das turnos"
+          },
+          {
+            "texto": "Pierdes tiempo contestando mensajes para coordinar horarios"
+          },
+          {
+            "texto": "Tus pacientes a veces no llegan y no avisan"
+          }
+        ],
+        "tituloNo": "No es para ti si…",
+        "no": [
+          {
+            "texto": "Atiendes sin turno, por orden de llegada"
+          },
+          {
+            "texto": "Buscas un sistema de facturación o historia clínica completa"
+          },
+          {
+            "texto": "No usas WhatsApp con tus pacientes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ag-faq",
+      "tipo": "faq",
+      "variante": "acordeon",
+      "campos": {
+        "antetitulo": "Preguntas frecuentes",
+        "titulo": "Lo que suelen preguntar antes de probarla",
+        "items": [
+          {
+            "pregunta": "¿Necesito instalar algo?",
+            "respuesta": "No. Funciona desde el navegador del celular o de la computadora."
+          },
+          {
+            "pregunta": "¿Los recordatorios salen de mi número?",
+            "respuesta": "Salen de un número de WhatsApp de tu consultorio, con tu nombre. Te ayudamos a conectarlo en la prueba."
+          },
+          {
+            "pregunta": "¿Qué pasa si un paciente quiere cambiar el turno?",
+            "respuesta": "Responde al recordatorio y elige otra hora libre. Tu agenda se actualiza sola."
+          },
+          {
+            "pregunta": "¿Cómo funciona la prueba gratis?",
+            "respuesta": "Son 7 días con todo incluido y sin tarjeta. Al terminar eliges un plan o la cuenta queda en pausa."
+          }
+        ]
+      }
+    },
+    {
+      "id": "ag-cta",
+      "tipo": "cta",
+      "variante": "banda",
+      "campos": {
+        "antetitulo": "Tu agenda, en orden",
+        "titulo": "Deja de dar turnos por chat y vuelve a lo tuyo: atender",
+        "resaltado": "vuelve a lo tuyo",
+        "subtitulo": "Configúrala en una tarde y comparte tu link hoy mismo.",
+        "boton": "Probar 7 días gratis",
+        "nota": "Sin tarjeta · Cancelas cuando quieras"
+      }
+    },
+    {
+      "id": "ag-pie",
+      "tipo": "pie",
+      "variante": "simple",
+      "campos": {
+        "marca": "Agenda Clara",
+        "texto": "Software de turnos online y recordatorios por WhatsApp para consultorios y centros de bienestar."
+      }
+    }
+  ]
+}

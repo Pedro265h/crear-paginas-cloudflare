@@ -1,0 +1,372 @@
+{
+  "v": 1,
+  "tipo": "ventas",
+  "marca": {
+    "nombre": "Luz de Producto"
+  },
+  "seo": {
+    "titulo": "Fotos que venden · Curso de fotografía de producto con el celular",
+    "descripcion": "Aprende a hacer fotos de producto profesionales con tu celular, una ventana y cosas que ya tienes en casa. Curso online a tu ritmo, con acceso de por vida."
+  },
+  "tema": {
+    "modo": "oscuro",
+    "colores": {
+      "fondo": "#0a0a12",
+      "texto": "#eef0f8",
+      "primario": "#ff9a52",
+      "acento": "#8f7cff"
+    },
+    "letras": "",
+    "radio": "suave",
+    "estilo": "limpio",
+    "plantilla": "penumbra"
+  },
+  "conversion": {
+    "accion": "checkout",
+    "boton": "Quiero el curso por US$47",
+    "url": "https://pay.hotmart.com/",
+    "campos": [
+      "nombre",
+      "correo"
+    ]
+  },
+  "secciones": [
+    {
+      "id": "lp-aviso",
+      "tipo": "aviso",
+      "variante": "barra",
+      "campos": {
+        "texto": "Curso online · A tu ritmo · Acceso de por vida · Garantía de 7 días"
+      }
+    },
+    {
+      "id": "lp-hero",
+      "tipo": "hero",
+      "variante": "dividido",
+      "campos": {
+        "antetitulo": "Curso online de fotografía de producto",
+        "titulo": "Fotos de producto que venden, hechas con tu celular",
+        "resaltado": "que venden",
+        "subtitulo": "Aprende a iluminar, componer y editar tus productos con una ventana, una cartulina y el teléfono que ya tienes. Sin cámara, sin estudio y sin pagarle a un fotógrafo cada mes.",
+        "puntos": [
+          {
+            "texto": "Luz de ventana, sin equipos caros"
+          },
+          {
+            "texto": "Composición para catálogo y redes"
+          },
+          {
+            "texto": "Edición en el celular, en minutos"
+          }
+        ],
+        "boton": "Quiero el curso por US$47",
+        "nota": "Pago único · Acceso de por vida · Garantía de 7 días",
+        "imagen": {
+          "ref": "curso-hero"
+        }
+      }
+    },
+    {
+      "id": "lp-problema",
+      "tipo": "problema",
+      "variante": "lista",
+      "campos": {
+        "antetitulo": "Te suena",
+        "titulo": "Tu producto es bueno, pero en la foto parece barato",
+        "resaltado": "parece barato",
+        "subtitulo": "La gente compra con los ojos. Y una foto oscura o torcida le dice que tu producto vale menos de lo que vale.",
+        "items": [
+          {
+            "texto": "Tomas la foto en la mesa de la cocina y sale amarilla, con sombras duras."
+          },
+          {
+            "texto": "En el celular se ve bien, pero en tu tienda o en un anuncio se ve pobre."
+          },
+          {
+            "texto": "Cada producto nuevo es un dolor de cabeza: no sabes cómo ponerlo ni desde dónde disparar."
+          },
+          {
+            "texto": "Un fotógrafo cobra por sesión y tú lanzas productos todos los meses."
+          }
+        ],
+        "cierre": "No necesitas otra cámara. Necesitas saber qué hacer con la luz que ya tienes."
+      }
+    },
+    {
+      "id": "lp-metodo",
+      "tipo": "mecanismo",
+      "variante": "linea",
+      "campos": {
+        "antetitulo": "El método",
+        "titulo": "Luz, escena y edición: tres pasos que repites con cada producto",
+        "resaltado": "tres pasos",
+        "subtitulo": "Un orden que funciona igual para un perfume, una vela o un par de zapatos.",
+        "items": [
+          {
+            "titulo": "Luz",
+            "texto": "Usas la ventana como un estudio: dónde poner el producto, cómo suavizar la luz y cómo rebotarla con una cartulina blanca."
+          },
+          {
+            "titulo": "Escena",
+            "texto": "Fondo, ángulo y objetos de apoyo para que el producto sea el protagonista, en foto de catálogo o en foto con ambiente."
+          },
+          {
+            "titulo": "Edición",
+            "texto": "Un flujo de edición en el celular para que todas tus fotos tengan el mismo color y se vean como una marca."
+          }
+        ],
+        "boton": "Quiero aprender el método",
+        "nota": "Pago único de US$47"
+      }
+    },
+    {
+      "id": "lp-galeria",
+      "tipo": "galeria",
+      "variante": "cuadricula",
+      "campos": {
+        "antetitulo": "Lo que vas a poder hacer",
+        "titulo": "Fotos con luz de verdad, aunque vendas desde tu casa",
+        "items": [
+          {
+            "imagen": {
+              "ref": "curso-g2"
+            },
+            "texto": "Bodegón con objetos de apoyo"
+          },
+          {
+            "imagen": {
+              "ref": "curso-g1"
+            },
+            "texto": "Luz de ventana sobre tela"
+          },
+          {
+            "imagen": {
+              "ref": "curso-g5"
+            },
+            "texto": "Fondo negro con una sola luz"
+          },
+          {
+            "imagen": {
+              "ref": "curso-g4"
+            },
+            "texto": "Detalle con gotas de agua"
+          },
+          {
+            "imagen": {
+              "ref": "curso-g3"
+            },
+            "texto": "Línea de productos en contraluz"
+          },
+          {
+            "imagen": {
+              "ref": "curso-g6"
+            },
+            "texto": "Envases sobre fondo negro"
+          }
+        ]
+      }
+    },
+    {
+      "id": "lp-beneficios",
+      "tipo": "beneficios",
+      "variante": "tarjetas",
+      "campos": {
+        "antetitulo": "Lo que te llevas",
+        "titulo": "Fotos propias cada vez que lanzas algo nuevo",
+        "resaltado": "cada vez que lanzas",
+        "subtitulo": "Dejas de depender de otros para mostrar lo que vendes.",
+        "items": [
+          {
+            "titulo": "Fotos para tu tienda",
+            "texto": "Fondo limpio y luz pareja, como piden las tiendas en línea y los catálogos."
+          },
+          {
+            "titulo": "Fotos para tus redes",
+            "texto": "Escenas con ambiente que se ven bien en Instagram y en tus anuncios."
+          },
+          {
+            "titulo": "Un estilo propio",
+            "texto": "Todas tus fotos con el mismo color y la misma luz: se reconocen como tuyas."
+          },
+          {
+            "titulo": "Sin equipos caros",
+            "texto": "Celular, ventana, cartulina y un trípode sencillo. Nada más."
+          },
+          {
+            "titulo": "A tu ritmo",
+            "texto": "Clases cortas que ves cuando quieras y vuelves a ver las veces que quieras."
+          },
+          {
+            "titulo": "Plantillas de escena",
+            "texto": "Fichas de luz y ángulo para repetir una foto que te gustó."
+          }
+        ],
+        "boton": "",
+        "nota": ""
+      }
+    },
+    {
+      "id": "lp-temario",
+      "tipo": "temario",
+      "variante": "acordeon",
+      "campos": {
+        "antetitulo": "El temario",
+        "titulo": "Seis módulos, de la primera foto a tu catálogo completo",
+        "resaltado": "a tu catálogo completo",
+        "subtitulo": "Clases cortas y prácticas: ves la técnica y la aplicas con tus productos.",
+        "items": [
+          {
+            "titulo": "Tu estudio en casa",
+            "texto": "Qué necesitas (y qué no), cómo armar tu rincón de fotos junto a una ventana y cómo preparar el producto."
+          },
+          {
+            "titulo": "La luz",
+            "texto": "Luz dura y luz suave, difusores caseros y rebotes con cartulina. Cómo leer las sombras."
+          },
+          {
+            "titulo": "Composición y ángulos",
+            "texto": "Frontal, cenital y tres cuartos. Cuándo usar cada uno y cómo dejar aire para tus textos."
+          },
+          {
+            "titulo": "Escenas con ambiente",
+            "texto": "Fondos, texturas y objetos de apoyo que cuentan una historia sin robarle protagonismo al producto."
+          },
+          {
+            "titulo": "Edición en el celular",
+            "texto": "Color, exposición y recorte. Cómo guardar tus ajustes para que todas las fotos se vean iguales."
+          },
+          {
+            "titulo": "Tu catálogo",
+            "texto": "Un flujo para fotografiar una línea completa en una tarde y tener fotos para tienda, redes y anuncios."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lp-bonos",
+      "tipo": "bonos",
+      "variante": "tarjetas",
+      "campos": {
+        "antetitulo": "Incluido",
+        "titulo": "Además del curso, te llevas",
+        "resaltado": "te llevas",
+        "subtitulo": "Material para que no empieces desde cero.",
+        "items": [
+          {
+            "titulo": "Fichas de escena",
+            "texto": "Doce fichas con la posición de la luz, el ángulo y los objetos de cada tipo de foto.",
+            "valor": ""
+          },
+          {
+            "titulo": "Ajustes de edición",
+            "texto": "Ajustes de color listos para copiar en tu app de edición: todas tus fotos con el mismo tono.",
+            "valor": ""
+          },
+          {
+            "titulo": "Lista de compras",
+            "texto": "Lo básico para tu rincón de fotos, con opciones económicas.",
+            "valor": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "lp-oferta",
+      "tipo": "oferta",
+      "variante": "tarjeta",
+      "campos": {
+        "antetitulo": "Tu acceso",
+        "titulo": "Todo el curso, por un solo pago",
+        "resaltado": "un solo pago",
+        "subtitulo": "Sin mensualidades. Entras hoy y el acceso es tuyo para siempre.",
+        "items": [
+          {
+            "texto": "Seis módulos en video, a tu ritmo",
+            "valor": ""
+          },
+          {
+            "texto": "Fichas de escena y ajustes de edición",
+            "valor": ""
+          },
+          {
+            "texto": "Lista de compras para tu rincón de fotos",
+            "valor": ""
+          },
+          {
+            "texto": "Acceso de por vida y actualizaciones",
+            "valor": ""
+          }
+        ],
+        "valorTotal": "",
+        "precioAntes": "",
+        "precio": "US$47",
+        "detallePrecio": "Pago único · Tarjeta o PayPal",
+        "boton": "Quiero el curso por US$47",
+        "nota": "Garantía de 7 días: si no es para ti, te devolvemos el dinero"
+      }
+    },
+    {
+      "id": "lp-garantia",
+      "tipo": "garantia",
+      "variante": "sello",
+      "campos": {
+        "dias": "7",
+        "titulo": "Pruébalo una semana completa",
+        "texto": "Entra, mira las clases y haz tus primeras fotos. Si en 7 días sientes que no es para ti, escríbenos y te devolvemos el 100% de tu pago, sin preguntas."
+      }
+    },
+    {
+      "id": "lp-faq",
+      "tipo": "faq",
+      "variante": "acordeon",
+      "campos": {
+        "antetitulo": "Preguntas frecuentes",
+        "titulo": "Antes de entrar",
+        "items": [
+          {
+            "pregunta": "¿Necesito un celular de gama alta?",
+            "respuesta": "No. Cualquier celular de los últimos años sirve. La diferencia la hace la luz, no la cámara."
+          },
+          {
+            "pregunta": "¿Qué tengo que comprar?",
+            "respuesta": "Casi nada: una cartulina blanca, un papel de calco o una cortina delgada y, si quieres, un trípode sencillo. Está todo en la lista de compras."
+          },
+          {
+            "pregunta": "¿Cuánto tiempo tengo para verlo?",
+            "respuesta": "El acceso es de por vida. Ves las clases a tu ritmo y vuelves a ellas cuando lances un producto nuevo."
+          },
+          {
+            "pregunta": "¿Sirve si vendo ropa o comida?",
+            "respuesta": "Sí. El método es el mismo para cualquier producto; en el curso hay ejemplos con objetos pequeños, ropa y comida."
+          },
+          {
+            "pregunta": "¿Cómo funciona la garantía?",
+            "respuesta": "Tienes 7 días desde tu compra. Si el curso no es para ti, nos escribes y te devolvemos el 100% de tu pago."
+          }
+        ]
+      }
+    },
+    {
+      "id": "lp-cta",
+      "tipo": "cta",
+      "variante": "tarjeta",
+      "campos": {
+        "antetitulo": "Tu próximo lanzamiento",
+        "titulo": "Haz que tu producto se vea tan bueno como es",
+        "resaltado": "tan bueno como es",
+        "subtitulo": "Un celular, una ventana y un método. Empiezas hoy y haces tus primeras fotos este fin de semana.",
+        "boton": "Quiero el curso por US$47",
+        "nota": "Pago único · Acceso de por vida · Garantía de 7 días"
+      }
+    },
+    {
+      "id": "lp-pie",
+      "tipo": "pie",
+      "variante": "simple",
+      "campos": {
+        "marca": "Luz de Producto",
+        "texto": "Curso educativo de fotografía. Los resultados dependen de tu práctica y de tus productos."
+      }
+    }
+  ]
+}

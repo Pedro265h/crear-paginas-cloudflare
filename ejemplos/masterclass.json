@@ -1,0 +1,268 @@
+{
+  "v": 1,
+  "tipo": "registro",
+  "marca": {
+    "nombre": "Bolsillo Claro"
+  },
+  "seo": {
+    "titulo": "Masterclass gratis: ordena tus finanzas de freelancer",
+    "descripcion": "En 90 minutos armas en vivo tu sistema para separar impuestos, pagarte un sueldo y ahorrar, aunque tus ingresos cambien cada mes. {{diaSemana}} · Gratis."
+  },
+  "tema": {
+    "modo": "claro",
+    "colores": {
+      "fondo": "#f7f5f0",
+      "texto": "#15171c",
+      "primario": "#5b4bff",
+      "acento": "#14b8a6"
+    },
+    "letras": "",
+    "radio": "suave",
+    "estilo": "editorial",
+    "plantilla": "nacar"
+  },
+  "conversion": {
+    "accion": "formulario",
+    "boton": "Reservar mi cupo gratis",
+    "campos": [
+      "nombre",
+      "correo",
+      "whatsapp"
+    ]
+  },
+  "evento": {
+    "nombre": "Masterclass · Ordena tus finanzas de freelancer",
+    "fecha": "{{fecha}}",
+    "zona": "America/Bogota",
+    "duracionMin": 90,
+    "modalidad": "online",
+    "lugar": ""
+  },
+  "secciones": [
+    {
+      "id": "mc-aviso",
+      "tipo": "aviso",
+      "variante": "barra",
+      "campos": {
+        "texto": "Masterclass gratis en vivo · {{diaSemana}} · 19:00 (Bogotá) · Cupos limitados"
+      }
+    },
+    {
+      "id": "mc-hero",
+      "tipo": "hero",
+      "variante": "evento",
+      "campos": {
+        "antetitulo": "Masterclass gratis · En vivo · 90 min",
+        "titulo": "Ordena tus finanzas de freelancer y deja de llegar a fin de mes con angustia",
+        "resaltado": "deja de llegar a fin de mes con angustia",
+        "subtitulo": "En 90 minutos armas en vivo tu sistema para separar los impuestos, pagarte un sueldo y ahorrar, aunque tus ingresos cambien cada mes.",
+        "puntos": [
+          {
+            "texto": "Tu sistema de cuatro cuentas, armado en vivo"
+          },
+          {
+            "texto": "La plantilla para tu presupuesto variable"
+          },
+          {
+            "texto": "Sin jerga contable ni teoría de relleno"
+          }
+        ],
+        "boton": "Reservar mi cupo gratis",
+        "nota": "100% gratis · Online en vivo · Cupos limitados"
+      }
+    },
+    {
+      "id": "mc-beneficios",
+      "tipo": "beneficios",
+      "variante": "numerada",
+      "campos": {
+        "antetitulo": "Lo que vas a aprender",
+        "titulo": "En 90 minutos sales con tu plata ordenada y un plan para cada cobro",
+        "resaltado": "un plan para cada cobro",
+        "subtitulo": "No es teoría: es un sistema simple que armas durante la clase y usas desde el próximo pago que recibas.",
+        "items": [
+          {
+            "titulo": "Cuánto separar para impuestos cada vez que cobras",
+            "texto": "Una regla fácil para que la declaración no te tome por sorpresa ni te deje sin plata en el peor mes."
+          },
+          {
+            "titulo": "Cuánto pagarte a ti, aunque un mes entre poco",
+            "texto": "Te asignas un sueldo fijo y dejas de gastar según lo que haya en la cuenta ese día."
+          },
+          {
+            "titulo": "Un colchón para los meses flojos",
+            "texto": "Cuánto ahorrar y dónde guardarlo para que un mes sin clientes no se convierta en deuda."
+          },
+          {
+            "titulo": "Cómo cobrar a tiempo y sin pena",
+            "texto": "Qué poner en tus propuestas y cuándo enviar el recordatorio para que te paguen en la fecha."
+          }
+        ],
+        "boton": "Quiero mi cupo gratis",
+        "nota": "Gratis · 90 minutos · En vivo"
+      }
+    },
+    {
+      "id": "mc-contador",
+      "tipo": "contador",
+      "variante": "bloque",
+      "campos": {
+        "titulo": "La masterclass empieza en",
+        "boton": "Reservar mi cupo gratis",
+        "nota": "Gratis · {{dia}} · 19:00 (hora de Bogotá)"
+      }
+    },
+    {
+      "id": "mc-urgencia",
+      "tipo": "urgencia",
+      "variante": "bloque",
+      "campos": {
+        "antetitulo": "Por qué ahora",
+        "titulo": "Cada mes sin un sistema es plata que se va sin que sepas a dónde",
+        "resaltado": "plata que se va sin que sepas a dónde",
+        "subtitulo": "Cuando tus ingresos cambian, ordenar las cuentas «cuando haya tiempo» no llega nunca. El mejor momento es antes del próximo cobro.",
+        "texto": "La clase es en vivo y los cupos son limitados para poder responder preguntas. Quien se registra primero asegura su lugar y recibe la plantilla antes de empezar.",
+        "cifras": [],
+        "boton": "Reservar mi cupo gratis",
+        "nota": "Gratis · 90 minutos · En vivo · Cupos limitados"
+      }
+    },
+    {
+      "id": "mc-comparacion",
+      "tipo": "comparacion",
+      "variante": "tabla",
+      "campos": {
+        "antetitulo": "Comparación",
+        "titulo": "Aquí no te dan consejos sueltos: armas tu sistema en vivo",
+        "resaltado": "armas tu sistema en vivo",
+        "subtitulo": "Compara esta masterclass con buscar respuestas sueltas por internet o con una hoja de cálculo que nunca terminas.",
+        "columnaA": "Esta masterclass",
+        "columnaB": "Consejos sueltos o hacerlo solo",
+        "filas": [
+          {
+            "a": "Armas tu sistema durante la clase, paso a paso",
+            "b": "Videos sueltos que no se aplican a tu caso"
+          },
+          {
+            "a": "Pensado para ingresos que cambian cada mes",
+            "b": "Presupuestos hechos para quien tiene sueldo fijo"
+          },
+          {
+            "a": "Te llevas la plantilla lista para usar",
+            "b": "Una hoja de cálculo que nunca terminas"
+          },
+          {
+            "a": "Preguntas en vivo al final de la clase",
+            "b": "Te quedas con la duda"
+          },
+          {
+            "a": "90 minutos y gratis, sin riesgo",
+            "b": "Meses de prueba y error"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-para",
+      "tipo": "para_quien",
+      "variante": "columnas",
+      "campos": {
+        "antetitulo": "Para quién es",
+        "titulo": "Si trabajas por tu cuenta, esta clase es para ti. Si buscas hacerte rico rápido, no",
+        "tituloSi": "Es para ti si…",
+        "si": [
+          {
+            "texto": "Eres freelancer, consultor o tienes un negocio pequeño y tus ingresos cambian cada mes"
+          },
+          {
+            "texto": "Llegas a la declaración de impuestos sin saber cuánto vas a tener que pagar"
+          },
+          {
+            "texto": "Mezclas la plata del negocio con la tuya y nunca sabes cuánto ganas de verdad"
+          },
+          {
+            "texto": "Quieres empezar a ahorrar sin depender de que entre un buen mes"
+          }
+        ],
+        "tituloNo": "No es para ti si…",
+        "no": [
+          {
+            "texto": "Buscas una inversión que te haga rico rápido"
+          },
+          {
+            "texto": "Esperas que alguien te lleve la contabilidad: aquí aprendes a ordenarte tú"
+          },
+          {
+            "texto": "Necesitas asesoría tributaria de tu caso particular"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-form",
+      "tipo": "formulario",
+      "variante": "tarjeta",
+      "campos": {
+        "antetitulo": "Cupos limitados · {{dia}}",
+        "titulo": "Reserva tu cupo y arma tu sistema de finanzas en vivo",
+        "resaltado": "tu sistema de finanzas en vivo",
+        "subtitulo": "Déjanos tu nombre, tu correo y tu WhatsApp. Ahí te llegan el acceso, la plantilla y los recordatorios.",
+        "boton": "Reservar mi cupo gratis",
+        "nota": "100% gratis · 90 minutos · En vivo y online"
+      }
+    },
+    {
+      "id": "mc-faq",
+      "tipo": "faq",
+      "variante": "acordeon",
+      "campos": {
+        "antetitulo": "Preguntas frecuentes",
+        "titulo": "Antes de reservar, resuelve tus dudas",
+        "items": [
+          {
+            "pregunta": "¿De verdad es gratis?",
+            "respuesta": "Sí. Registrarte y asistir no cuesta nada, y la plantilla también es gratis."
+          },
+          {
+            "pregunta": "¿Necesito saber de contabilidad?",
+            "respuesta": "No. Todo se explica con ejemplos de la vida de un freelancer, sin jerga. Si sabes usar una hoja de cálculo, puedes seguir la clase."
+          },
+          {
+            "pregunta": "¿Cuándo es y cuánto dura?",
+            "respuesta": "El {{diaSemana}} a las 19:00, hora de Bogotá, en vivo y online. Dura 90 minutos: aparta ese tiempo para verla completa."
+          },
+          {
+            "pregunta": "¿Quién da la clase?",
+            "respuesta": "Lucía Montes, contadora pública que acompaña a freelancers y negocios pequeños a ordenar sus cuentas."
+          },
+          {
+            "pregunta": "¿Qué pasa si llego tarde o no puedo conectarme?",
+            "respuesta": "Te mandamos recordatorios por WhatsApp y correo con el acceso. Entra unos minutos antes: el sistema se arma desde el principio."
+          }
+        ]
+      }
+    },
+    {
+      "id": "mc-cta",
+      "tipo": "cta",
+      "variante": "tarjeta",
+      "campos": {
+        "antetitulo": "{{diaSemana}} · 19:00 (Bogotá)",
+        "titulo": "Sal de la clase con tu plata ordenada y un plan para el próximo cobro",
+        "resaltado": "tu plata ordenada",
+        "subtitulo": "Son 90 minutos, en vivo y gratis. Te llevas el sistema armado y la plantilla para usarlo desde hoy.",
+        "boton": "Reservar mi cupo gratis",
+        "nota": "100% gratis · 90 minutos en vivo · Cupos limitados"
+      }
+    },
+    {
+      "id": "mc-pie",
+      "tipo": "pie",
+      "variante": "simple",
+      "campos": {
+        "marca": "Bolsillo Claro",
+        "texto": "Esta masterclass es contenido educativo y no reemplaza la asesoría contable o tributaria de tu caso particular."
+      }
+    }
+  ]
+}

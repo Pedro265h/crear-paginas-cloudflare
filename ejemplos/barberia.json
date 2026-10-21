@@ -1,0 +1,252 @@
+{
+  "v": 1,
+  "tipo": "local",
+  "marca": {
+    "nombre": "Barbería Brava"
+  },
+  "seo": {
+    "titulo": "Barbería Brava · Cortes, fade y barba en Chapinero",
+    "descripcion": "Corte clásico, fade y barba con navaja y toalla caliente en Chapinero, Bogotá. Pide tu turno por WhatsApp y llega a la hora, sin filas."
+  },
+  "tema": {
+    "modo": "oscuro",
+    "colores": {
+      "fondo": "#0b0a09",
+      "texto": "#f3efe8",
+      "primario": "#ff5a1f",
+      "acento": "#ffd23f"
+    },
+    "letras": "",
+    "radio": "recto",
+    "estilo": "impacto",
+    "plantilla": "voltaje"
+  },
+  "conversion": {
+    "accion": "whatsapp",
+    "boton": "Pedir mi turno por WhatsApp",
+    "whatsapp": "573001234567",
+    "mensaje": "Hola, vi la página de Barbería Brava y quiero pedir un turno. ¿Qué horarios tienen hoy?",
+    "campos": [
+      "nombre",
+      "whatsapp"
+    ]
+  },
+  "secciones": [
+    {
+      "id": "bb-hero",
+      "tipo": "hero",
+      "variante": "dividido",
+      "campos": {
+        "antetitulo": "Barbería en Chapinero, Bogotá",
+        "titulo": "Sal con el corte que pediste, sin esperar tu turno de pie",
+        "resaltado": "el corte que pediste",
+        "subtitulo": "Corte clásico, fade y barba con navaja y toalla caliente. Pides tu turno por WhatsApp, llegas a la hora y te atendemos sin filas.",
+        "puntos": [
+          {
+            "texto": "Turnos por WhatsApp, en minutos"
+          },
+          {
+            "texto": "Fade, tijera y navaja"
+          },
+          {
+            "texto": "De lunes a sábado, hasta las 8 de la noche"
+          }
+        ],
+        "boton": "Pedir mi turno por WhatsApp",
+        "nota": "Te respondemos en minutos · Sin filas",
+        "imagen": {
+          "ref": "barberia-hero"
+        }
+      }
+    },
+    {
+      "id": "bb-servicios",
+      "tipo": "servicios",
+      "variante": "tarjetas",
+      "campos": {
+        "antetitulo": "Servicios y precios",
+        "titulo": "Elige tu servicio y sal listo en menos de una hora",
+        "resaltado": "sal listo",
+        "subtitulo": "Precios claros, sin sorpresas. Dinos qué quieres y lo hacemos tal cual lo pediste.",
+        "items": [
+          {
+            "titulo": "Corte clásico",
+            "texto": "Tijera y máquina, con el acabado a tu medida y el cuello perfilado con navaja.",
+            "precio": "$35.000",
+            "imagen": {
+              "ref": "barberia-corte"
+            }
+          },
+          {
+            "titulo": "Fade",
+            "texto": "Degradado bajo, medio o alto, bien difuminado y con el detalle que pidas.",
+            "precio": "$40.000",
+            "imagen": {
+              "ref": "barberia-fade"
+            }
+          },
+          {
+            "titulo": "Barba con navaja",
+            "texto": "Perfilado con navaja, toalla caliente y bálsamo. Suave y sin irritación.",
+            "precio": "$30.000",
+            "imagen": {
+              "ref": "barberia-navaja"
+            }
+          }
+        ],
+        "boton": "Pedir mi turno por WhatsApp",
+        "nota": "Corte + barba en una sola visita: $60.000 · Pagas en el local"
+      }
+    },
+    {
+      "id": "bb-pasos",
+      "tipo": "mecanismo",
+      "variante": "pasos",
+      "campos": {
+        "antetitulo": "Así de fácil",
+        "titulo": "Tu turno en tres pasos, sin filas ni vueltas",
+        "resaltado": "sin filas ni vueltas",
+        "subtitulo": "Nada de adivinar cuánto te toca esperar.",
+        "items": [
+          {
+            "titulo": "Escríbenos por WhatsApp",
+            "texto": "Dinos qué servicio quieres y a qué hora te queda bien."
+          },
+          {
+            "titulo": "Te confirmamos el turno",
+            "texto": "Te respondemos con la hora libre más cercana y te guardamos el puesto."
+          },
+          {
+            "titulo": "Llegas y te atendemos",
+            "texto": "Te sientas a la hora acordada. Si se te complica, nos avisas y lo movemos."
+          }
+        ],
+        "boton": "Pedir mi turno",
+        "nota": "Te respondemos en minutos"
+      }
+    },
+    {
+      "id": "bb-galeria",
+      "tipo": "galeria",
+      "variante": "cuadricula",
+      "campos": {
+        "antetitulo": "El local",
+        "titulo": "Un lugar para sentarte tranquilo y salir distinto",
+        "items": [
+          {
+            "imagen": {
+              "ref": "barberia-g1"
+            },
+            "texto": "El salón, con luz para trabajar el detalle"
+          },
+          {
+            "imagen": {
+              "ref": "barberia-g5"
+            },
+            "texto": "Barba larga, bien cuidada"
+          },
+          {
+            "imagen": {
+              "ref": "barberia-g2"
+            },
+            "texto": "Sillas clásicas de barbero"
+          },
+          {
+            "imagen": {
+              "ref": "barberia-g3"
+            },
+            "texto": "Máquina y peine para el fade"
+          },
+          {
+            "imagen": {
+              "ref": "barberia-g4"
+            },
+            "texto": "Herramientas limpias en cada servicio"
+          },
+          {
+            "imagen": {
+              "ref": "barberia-g6"
+            },
+            "texto": "Productos para el cabello y la barba"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bb-ubicacion",
+      "tipo": "ubicacion",
+      "variante": "tarjeta",
+      "campos": {
+        "antetitulo": "Dónde estamos",
+        "titulo": "En pleno Chapinero, a pasos de la Séptima",
+        "direccion": "Calle 57 # 9-21, Chapinero, Bogotá",
+        "referencia": "Local a la calle, con la fachada naranja",
+        "horarios": [
+          {
+            "dia": "Lunes a viernes",
+            "hora": "9:00 a. m. a 8:00 p. m."
+          },
+          {
+            "dia": "Sábados",
+            "hora": "9:00 a. m. a 7:00 p. m."
+          },
+          {
+            "dia": "Domingos",
+            "hora": "Cerrado"
+          }
+        ],
+        "boton": "Escribir por WhatsApp",
+        "nota": "Mejor con turno, así no esperas"
+      }
+    },
+    {
+      "id": "bb-faq",
+      "tipo": "faq",
+      "variante": "acordeon",
+      "campos": {
+        "antetitulo": "Preguntas frecuentes",
+        "titulo": "Lo que casi todos preguntan antes de venir",
+        "items": [
+          {
+            "pregunta": "¿Tengo que pedir turno o puedo llegar?",
+            "respuesta": "Puedes llegar, pero con turno no esperas: escríbenos por WhatsApp y te damos la hora libre más cercana."
+          },
+          {
+            "pregunta": "¿Cuánto se demora cada servicio?",
+            "respuesta": "El corte, unos 40 minutos. El combo de corte y barba, alrededor de una hora."
+          },
+          {
+            "pregunta": "¿Qué pasa si llego tarde?",
+            "respuesta": "Avísanos por WhatsApp. Si hay espacio te atendemos igual; si no, te movemos al siguiente turno libre."
+          },
+          {
+            "pregunta": "¿Cómo puedo pagar?",
+            "respuesta": "En el local, con efectivo, tarjeta débito o crédito y Nequi."
+          }
+        ]
+      }
+    },
+    {
+      "id": "bb-cta",
+      "tipo": "cta",
+      "variante": "banda",
+      "campos": {
+        "antetitulo": "Tu barbero de confianza",
+        "titulo": "Pide tu turno hoy y sal con el corte y la barba impecables",
+        "resaltado": "impecables",
+        "subtitulo": "Escríbenos por WhatsApp, elige tu hora y vuelve a lo tuyo sin perder la tarde.",
+        "boton": "Pedir mi turno por WhatsApp",
+        "nota": "Te respondemos en minutos · Chapinero, Bogotá"
+      }
+    },
+    {
+      "id": "bb-pie",
+      "tipo": "pie",
+      "variante": "simple",
+      "campos": {
+        "marca": "Barbería Brava",
+        "texto": "Calle 57 # 9-21, Chapinero, Bogotá · Lunes a sábado. Precios en pesos colombianos, sujetos a cambios."
+      }
+    }
+  ]
+}

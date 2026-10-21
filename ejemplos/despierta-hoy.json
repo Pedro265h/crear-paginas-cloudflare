@@ -1,0 +1,508 @@
+{
+  "v": 1,
+  "tipo": "evento",
+  "marca": {
+    "nombre": "Despierta Hoy"
+  },
+  "seo": {
+    "titulo": "Despierta Hoy · Un día presencial para volver a ti",
+    "descripcion": "Un día completo, en persona, para ordenar tu vida desde adentro y salir con un plan que sí puedes sostener. {{diaEvento}}, Ciudad de México."
+  },
+  "tema": {
+    "modo": "oscuro",
+    "colores": {
+      "fondo": "#0c0a10",
+      "texto": "#f5f1ec",
+      "primario": "#ff6a4d",
+      "acento": "#ffb648"
+    },
+    "letras": "",
+    "plantilla": "prisma"
+  },
+  "conversion": {
+    "accion": "checkout",
+    "boton": "Quiero mi entrada",
+    "url": "",
+    "whatsapp": "+525512345678",
+    "mensaje": "Hola, tengo una duda sobre Despierta Hoy"
+  },
+  "evento": {
+    "nombre": "Despierta Hoy",
+    "fecha": "{{fechaEvento}}",
+    "zona": "America/Mexico_City",
+    "duracionMin": 540,
+    "modalidad": "presencial",
+    "lugar": "Auditorio Ágora, Ciudad de México"
+  },
+  "secciones": [
+    {
+      "id": "dh-aviso",
+      "tipo": "aviso",
+      "campos": {
+        "texto": "Reserva tu lugar para vivir un día que no se repite"
+      }
+    },
+    {
+      "id": "dh-hero",
+      "tipo": "hero",
+      "variante": "centrado",
+      "campos": {
+        "antetitulo": "Un día presencial para volver a ti",
+        "titulo": "Despierta Hoy: el día en que eliges cómo quieres vivir",
+        "resaltado": "eliges cómo quieres vivir",
+        "subtitulo": "Nueve horas de charlas, dinámicas en vivo y conversación honesta para salir con claridad, energía y un plan que sí puedes sostener.",
+        "puntos": [],
+        "boton": "Quiero mi entrada",
+        "nota": "{{diaEvento}} · Ciudad de México · 400 lugares",
+        "imagen": ""
+      }
+    },
+    {
+      "id": "dh-problema",
+      "tipo": "problema",
+      "variante": "lista",
+      "campos": {
+        "antetitulo": "",
+        "titulo": "Haces todo lo que se supone. Y aun así algo no encaja.",
+        "resaltado": "Y aun así algo no encaja.",
+        "subtitulo": "Cumples, avanzas y resuelves. Pero al final del día sientes que vas en automático y que lo importante siempre queda para después.",
+        "items": [
+          {
+            "texto": "Lees, tomas cursos y escuchas consejos, pero tu rutina sigue igual."
+          },
+          {
+            "texto": "Trabajas sin parar y la sensación de cansancio no se va."
+          },
+          {
+            "texto": "Sabes lo que quieres cambiar, pero no encuentras por dónde empezar."
+          },
+          {
+            "texto": "Te cuesta parar sin sentir culpa."
+          }
+        ],
+        "cierre": "No te falta disciplina. Te falta un espacio para mirar tu vida con calma y decidir."
+      }
+    },
+    {
+      "id": "dh-idea",
+      "tipo": "idea",
+      "variante": "lado",
+      "campos": {
+        "antetitulo": "La idea detrás",
+        "titulo": "No te falta otro plan. Te falta detenerte a elegir.",
+        "resaltado": "Te falta detenerte a elegir.",
+        "subtitulo": "",
+        "texto": "Pasamos el año resolviendo urgencias. Elegimos por inercia: lo que toca, lo que se espera, lo que siempre hicimos.\n\nCuando por fin te detienes un día entero, sin pantallas y con las preguntas correctas, aparece lo que de verdad quieres. Y con eso claro, el plan se arma casi solo.",
+        "frase": "Lo que no eliges a propósito, lo elige la rutina por ti.",
+        "imagen": "",
+        "boton": "",
+        "nota": ""
+      }
+    },
+    {
+      "id": "dh-comparacion",
+      "tipo": "comparacion",
+      "variante": "tarjetas",
+      "campos": {
+        "antetitulo": "Qué es esto",
+        "titulo": "Esto no es una conferencia. Es un día que cambia tu mirada.",
+        "resaltado": "cambia tu mirada.",
+        "subtitulo": "Un día completo y presencial, pensado para que entres con preguntas y salgas con decisiones.",
+        "columnaA": "Es",
+        "columnaB": "No es",
+        "filas": [
+          {
+            "a": "Un día para ordenar tus prioridades desde adentro",
+            "b": "Una charla donde tomas notas y te vas igual"
+          },
+          {
+            "a": "Dinámicas guiadas, paso a paso",
+            "b": "Un seminario de técnicas y plantillas"
+          },
+          {
+            "a": "Un plan concreto para los próximos 90 días",
+            "b": "Motivación que se acaba el lunes"
+          },
+          {
+            "a": "Conversación real con personas en tu mismo camino",
+            "b": "Contenido que ya viste en internet"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dh-mecanismo",
+      "tipo": "mecanismo",
+      "variante": "pasos",
+      "campos": {
+        "antetitulo": "",
+        "titulo": "4 momentos. Un solo día.",
+        "resaltado": "Un solo día.",
+        "subtitulo": "El día está pensado como una sola secuencia: cada momento prepara el siguiente.",
+        "items": [
+          {
+            "titulo": "Detenerte",
+            "texto": "Sales del ruido y miras con honestidad dónde estás hoy, sin juzgarte."
+          },
+          {
+            "titulo": "Soltar",
+            "texto": "Reconoces los hábitos y las creencias que te mantienen en el mismo lugar."
+          },
+          {
+            "titulo": "Elegir",
+            "texto": "Defines qué quieres para tu vida, tu trabajo y tus relaciones este año."
+          },
+          {
+            "titulo": "Sostener",
+            "texto": "Armas un plan simple y real para que el cambio dure después del evento."
+          }
+        ],
+        "boton": "Quiero mi entrada",
+        "nota": ""
+      }
+    },
+    {
+      "id": "dh-beneficios",
+      "tipo": "beneficios",
+      "variante": "tarjetas",
+      "campos": {
+        "antetitulo": "Así se ve después",
+        "titulo": "Entras con preguntas. Sales con decisiones.",
+        "resaltado": "Sales con decisiones.",
+        "subtitulo": "Lo que te llevas no es una sensación bonita: es claridad que se nota en tu semana.",
+        "items": [
+          {
+            "titulo": "Más energía",
+            "texto": "Sabes qué te la quita y qué vas a dejar de hacer desde el lunes."
+          },
+          {
+            "titulo": "Prioridades claras",
+            "texto": "Tres decisiones concretas para tu trabajo y tu vida personal."
+          },
+          {
+            "titulo": "Relaciones con calma",
+            "texto": "Conversaciones pendientes que por fin sabes cómo empezar."
+          },
+          {
+            "titulo": "Un plan que dura",
+            "texto": "Un plan de 90 días hecho a tu medida, no uno copiado."
+          }
+        ],
+        "boton": "",
+        "nota": ""
+      }
+    },
+    {
+      "id": "dh-caminos",
+      "tipo": "caminos",
+      "variante": "columnas",
+      "campos": {
+        "antetitulo": "",
+        "titulo": "Dos caminos. Una decisión.",
+        "resaltado": "Una decisión.",
+        "subtitulo": "",
+        "rotuloA": "El costo de no venir",
+        "tituloA": "¿Cuánto te cuesta otro año igual?",
+        "textoA": "Si el {{diaEvento}} no pasa nada, no te quedas donde estás: pagas otro año de esto.",
+        "itemsA": [
+          {
+            "texto": "La misma rutina que te deja sin energía al final del día."
+          },
+          {
+            "texto": "Las decisiones importantes, otra vez para después."
+          },
+          {
+            "texto": "Relaciones en pausa mientras resuelves lo urgente."
+          },
+          {
+            "texto": "La sensación de ir en automático, mes tras mes."
+          }
+        ],
+        "cierreA": "La pregunta no es si puedes aguantar otro año. Es cuánto más quieres pagar ese precio.",
+        "rotuloB": "Lo que cambia",
+        "tituloB": "Después del {{diaEvento}} ya no vas a",
+        "textoB": "",
+        "itemsB": [
+          {
+            "texto": "Elegir por inercia lo que haces cada semana."
+          },
+          {
+            "texto": "Postergar lo que de verdad te importa."
+          },
+          {
+            "texto": "Cargar solo con decisiones que puedes compartir."
+          },
+          {
+            "texto": "Volver a la persona que eras al entrar."
+          }
+        ],
+        "cierreB": "Lo que ves con claridad, ya no se puede dejar de ver."
+      }
+    },
+    {
+      "id": "dh-paraquien",
+      "tipo": "para_quien",
+      "campos": {
+        "antetitulo": "",
+        "titulo": "No es para todo el mundo. Es para quien elige avanzar.",
+        "tituloSi": "Es para ti si",
+        "si": [
+          {
+            "texto": "Sientes que vas en automático y quieres recuperar el rumbo."
+          },
+          {
+            "texto": "Estás listo para mirar lo que has evitado."
+          },
+          {
+            "texto": "Quieres un plan, no solo inspiración."
+          },
+          {
+            "texto": "Te sirve compartir el proceso con otras personas."
+          }
+        ],
+        "tituloNo": "No es para ti si",
+        "no": [
+          {
+            "texto": "Buscas una fórmula rápida sin esfuerzo."
+          },
+          {
+            "texto": "Prefieres solo mirar desde la butaca."
+          },
+          {
+            "texto": "No estás dispuesto a cuestionar tu rutina."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dh-equipo",
+      "tipo": "equipo",
+      "campos": {
+        "antetitulo": "Quiénes te guían",
+        "titulo": "Dos guías, un mismo día.",
+        "resaltado": "",
+        "subtitulo": "",
+        "personas": [
+          {
+            "nombre": "Andrea Solís",
+            "rol": "Facilitadora de procesos de cambio personal",
+            "bio": "Acompaña a personas y equipos a ordenar su vida desde adentro. Diseña encuentros presenciales donde la teoría se vuelve práctica y cada persona sale con decisiones concretas.",
+            "imagen": ""
+          },
+          {
+            "nombre": "Tomás Rivera",
+            "rol": "Coach de hábitos y bienestar",
+            "bio": "Ayuda a convertir buenas intenciones en hábitos que duran. En Despierta Hoy guía las dinámicas del día y el plan de 90 días con el que sales.",
+            "imagen": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "dh-urgencia",
+      "tipo": "urgencia",
+      "variante": "frase",
+      "campos": {
+        "antetitulo": "Esta edición",
+        "titulo": "Un día que no se repite igual.",
+        "resaltado": "no se repite igual.",
+        "subtitulo": "Cada edición es única: otra sala, otras personas, otras preguntas.",
+        "texto": "La sala del {{diaEvento}} existe una sola vez.",
+        "cifras": [],
+        "boton": "",
+        "nota": ""
+      }
+    },
+    {
+      "id": "dh-niveles",
+      "tipo": "niveles",
+      "campos": {
+        "antetitulo": "Las entradas",
+        "titulo": "{{diaEvento}}. 400 lugares.",
+        "resaltado": "400 lugares.",
+        "subtitulo": "Una decisión de un día que te ahorra años en el mismo lugar.",
+        "etapa": "Preventa",
+        "cierre": "La preventa cierra en",
+        "niveles": [
+          {
+            "nombre": "General",
+            "precio": "$45",
+            "moneda": "USD",
+            "nota": "300 lugares · precio de preventa",
+            "lugares": "300",
+            "disponibles": "212",
+            "incluye": "El día completo: los 4 momentos\nCuaderno de trabajo\nAsiento en la zona general",
+            "noIncluye": "Asiento preferente\nAlmuerzo con los guías\nCírculo de integración en línea",
+            "etiqueta": "",
+            "boton": "Reservar General",
+            "link": "https://pago.ejemplo.com/despierta-general"
+          },
+          {
+            "nombre": "VIP",
+            "precio": "$120",
+            "moneda": "USD",
+            "nota": "80 lugares · precio de preventa",
+            "lugares": "80",
+            "disponibles": "31",
+            "incluye": "Todo lo de la entrada General\nAsiento preferente en las primeras filas\nKit de bienvenida\nCírculo de integración en línea",
+            "noIncluye": "Almuerzo con los guías",
+            "etiqueta": "Recomendada",
+            "boton": "Reservar VIP",
+            "link": "https://pago.ejemplo.com/despierta-vip"
+          },
+          {
+            "nombre": "Diamante",
+            "precio": "$290",
+            "moneda": "USD",
+            "nota": "Solo 20 lugares · precio de preventa",
+            "lugares": "20",
+            "disponibles": "6",
+            "incluye": "Todo lo de la entrada VIP\nAsiento en la primera fila\nAlmuerzo privado con los guías\nSesión grupal de seguimiento a los 30 días",
+            "noIncluye": "",
+            "etiqueta": "",
+            "boton": "Reservar Diamante",
+            "link": "https://pago.ejemplo.com/despierta-diamante"
+          }
+        ],
+        "nota": "Compra 100% segura"
+      }
+    },
+    {
+      "id": "dh-dudas",
+      "tipo": "dudas",
+      "campos": {
+        "titulo": "¿Tienes dudas?",
+        "texto": "Escríbenos por WhatsApp y te ayudamos a elegir tu entrada.",
+        "boton": "Escribir por WhatsApp",
+        "whatsapp": "",
+        "mensaje": ""
+      }
+    },
+    {
+      "id": "dh-bonos",
+      "tipo": "bonos",
+      "variante": "fotos",
+      "campos": {
+        "antetitulo": "Experiencias exclusivas",
+        "titulo": "La experiencia no termina ese día.",
+        "resaltado": "no termina ese día.",
+        "subtitulo": "",
+        "items": [
+          {
+            "titulo": "Círculo de integración",
+            "texto": "Un encuentro en línea dos semanas después para revisar tu plan con el grupo.",
+            "valor": "Incluido en VIP y Diamante",
+            "imagen": ""
+          },
+          {
+            "titulo": "Almuerzo con los guías",
+            "texto": "Una mesa para 20 personas con Andrea y Tomás, el mismo día del evento.",
+            "valor": "Solo Diamante · 20 lugares",
+            "imagen": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "dh-logistica",
+      "tipo": "logistica",
+      "campos": {
+        "antetitulo": "Logística",
+        "titulo": "Un día. Todo resuelto.",
+        "resaltado": "Todo resuelto.",
+        "fecha": "",
+        "fechaDetalle": "Un solo día, de principio a fin",
+        "horario": "",
+        "horarioDetalle": "Resérvate el día completo",
+        "lugar": "Auditorio Ágora",
+        "lugarDetalle": "Ciudad de México",
+        "formato": "Presencial · Día completo",
+        "formatoDetalle": "Charlas, dinámicas y una experiencia en vivo",
+        "mapa": ""
+      }
+    },
+    {
+      "id": "dh-faq",
+      "tipo": "faq",
+      "campos": {
+        "antetitulo": "Preguntas frecuentes",
+        "titulo": "Lo que más nos preguntan",
+        "items": [
+          {
+            "pregunta": "¿Puedo ir con alguien más?",
+            "respuesta": "Sí. Cada persona necesita su entrada; si vienen en grupo, escríbenos y te ayudamos."
+          },
+          {
+            "pregunta": "¿Y si voy solo?",
+            "respuesta": "La mayoría llega sola. Las dinámicas están pensadas para que conectes desde el primer momento."
+          },
+          {
+            "pregunta": "¿Cuál es el horario?",
+            "respuesta": "De 9:00 a 18:00, con pausas y almuerzo incluido."
+          },
+          {
+            "pregunta": "Vengo de otra ciudad, ¿vale la pena?",
+            "respuesta": "Sí. Al confirmar tu entrada te enviamos opciones de hospedaje cerca del auditorio."
+          },
+          {
+            "pregunta": "¿Hay reembolso?",
+            "respuesta": "Puedes transferir tu entrada a otra persona hasta 7 días antes del evento."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dh-cta",
+      "tipo": "cta",
+      "variante": "tarjeta",
+      "campos": {
+        "antetitulo": "Despierta Hoy",
+        "titulo": "El {{diaEvento}} puedes seguir igual. O puedes elegir cómo quieres vivir.",
+        "resaltado": "elegir cómo quieres vivir.",
+        "subtitulo": "La distancia entre las dos versiones es una decisión que se toma hoy.",
+        "boton": "Quiero mi entrada",
+        "nota": "400 lugares · {{diaEvento}} · Ciudad de México"
+      }
+    },
+    {
+      "id": "dh-pie",
+      "tipo": "pie",
+      "campos": {
+        "marca": "Despierta Hoy",
+        "texto": "Encuentro de desarrollo personal. No reemplaza un acompañamiento profesional de salud."
+      }
+    }
+  ],
+  "gracias": {
+    "secciones": [
+      {
+        "id": "dh-g-gracias",
+        "tipo": "gracias",
+        "campos": {
+          "antetitulo": "Entrada confirmada",
+          "titulo": "¡Listo{nombre}! Tu lugar está reservado",
+          "texto": "Te llega la confirmación de tu entrada a tu correo. Guarda la fecha: el {{diaEvento}} empezamos a las 9:00.",
+          "pasos": [
+            {
+              "titulo": "Revisa tu correo",
+              "texto": "Ahí tienes tu entrada y los detalles del día."
+            },
+            {
+              "titulo": "Agéndalo",
+              "texto": "Agrega el evento a tu calendario con los botones de arriba."
+            }
+          ],
+          "grupoTexto": "",
+          "grupoUrl": ""
+        }
+      },
+      {
+        "id": "dh-g-pie",
+        "tipo": "pie",
+        "campos": {
+          "marca": "Despierta Hoy"
+        }
+      }
+    ]
+  }
+}
