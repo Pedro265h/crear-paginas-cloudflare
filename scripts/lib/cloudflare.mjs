@@ -111,6 +111,11 @@ export function quienSoy(cwd) {
 export function explicarError(texto) {
   const t = String(texto || '');
   const reglas = [
+    // La conexión sirve (whoami responde) pero el token no alcanza para esa parte: decir cuál permiso le falta.
+    [/\/d1\/database[\s\S]*Authentication error \[code: 10000\]/i,
+      'Tu token funciona, pero no tiene permiso para las bases de datos (D1).', 'Edita tu token en https://dash.cloudflare.com/profile/api-tokens y súmale «Cuenta › D1 › Editar» (Account › D1 › Edit). Guarda y vuelve a publicar.'],
+    [/\/workers\/scripts[\s\S]*Authentication error \[code: 10000\]/i,
+      'Tu token funciona, pero no tiene permiso para subir el sitio (Workers).', 'Edita tu token en https://dash.cloudflare.com/profile/api-tokens y súmale «Cuenta › Scripts de Workers › Editar» (Account › Workers Scripts › Edit). Guarda y vuelve a publicar.'],
     [/not authenticated|not logged in|Authentication error \[code: 10000\]|Invalid access token|\b10001\b/i,
       'Tu compu no está conectada a Cloudflare o el token no sirve.', 'Conéctala otra vez: `npx wrangler login` (o guarda un token nuevo con scripts/token.mjs). Si usas token, revisa que tenga los permisos de walkthroughs/03-token-api.md.'],
     [/workers\.dev subdomain|register a workers\.dev subdomain|You need to register/i,
