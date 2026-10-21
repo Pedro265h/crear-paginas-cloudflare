@@ -1,0 +1,39 @@
+// La configuración de tu página en Cloudflare. La escriben los scripts de la skill crear-paginas con lo que dice
+// estado.json: si la cambias a mano, la próxima vez que publiques se vuelve a escribir.
+{
+  // El nombre de tu página en Cloudflare (letras, números y guiones). También es su dirección gratis:
+  // https://<nombre>.<tu-subdominio>.workers.dev
+  "name": "__NOMBRE__",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": { "enabled": true },
+
+  // Los archivos que arma armar.mjs (la página, gracias, legales, letras y fotos). El Worker atiende primero todo
+  // salvo letras, fotos y videos, que Cloudflare sirve directo (más rápido y no cuentan como pedidos al Worker).
+  "assets": {
+    "directory": "./sitio",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "run_worker_first": ["/*", "!/_f/*", "!/img/*", "!/media/*"]
+  },
+
+  // Tu base de registros (Cloudflare D1). publicar.mjs la crea la primera vez y pone aquí su id.
+  "d1_databases": [
+    { "binding": "REGISTROS", "database_name": "__BASE__", "database_id": "__BASE_ID__" }
+  ],
+
+  // Configuración pública (no secreta). Los secretos (WEBHOOK_URL, META_CAPI_TOKEN) se guardan aparte con
+  // `npx wrangler secret put NOMBRE` (o con scripts/secreto.mjs de la skill).
+  "vars": {
+    "ZONA_HORARIA": "__ZONA__",
+    "META_PIXEL": "__PIXEL__",
+    "LIMITE_REGISTROS": "5"
+  }__RUTAS__
+  // Tu dominio propio (lo pone publicar.mjs --dominio): Cloudflare crea el registro DNS y el certificado solo.
+  // "routes": [
+  //   { "pattern": "midominio.com", "custom_domain": true },
+  //   { "pattern": "www.midominio.com", "custom_domain": true }
+  // ]
+}

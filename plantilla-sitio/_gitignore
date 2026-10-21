@@ -1,0 +1,7 @@
+# Lo que se genera solo (se vuelve a armar con armar.mjs)
+.vista/
+.wrangler/
+node_modules/
+registros/
+.dev.vars
+.DS_Store
