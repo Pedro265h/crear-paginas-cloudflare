@@ -63,6 +63,7 @@ La primera pantalla. Promesa principal específica (resultado + tiempo o mecanis
 
 - Tipos de página: `registro`, `vsl`, `ventas`, `local`, `evento`
 - Variantes: `centrado` (Centrada), `dividido` (Texto y foto), `video` (Video arriba (VSL)), `evento` (Evento con formulario)
+- **Ojo:** La fecha y la hora del evento salen solas (con formato de 24 horas, «16:00 (hora de Colombia)») en las variantes con evento: en los textos escribe la hora igual.
 
 | campo | tipo | qué es | largo máx. | ayuda |
 |---|---|---|---|---|
@@ -100,6 +101,7 @@ Días, horas, minutos y segundos hasta el evento. Solo si hay fecha de evento.
 
 - Tipos de página: `registro`, `ventas`, `evento`
 - Variantes: `bloque` (Bloque)
+- **Ojo:** Necesita `evento.fecha`. Cuando la fecha pasa, en la página publicada la sección se esconde sola.
 
 | campo | tipo | qué es | largo máx. | ayuda |
 |---|---|---|---|---|
@@ -230,6 +232,7 @@ La persona detrás: nombre, rol, historia corta en primera persona y logros VERI
 
 - Tipos de página: `registro`, `vsl`, `ventas`, `local`, `evento`
 - Variantes: `lado` (Foto al lado), `centrado` (Centrado)
+- **Ojo:** Sin foto: si la persona dice que te la va a pasar, `imagen` por completar; si no tiene, `imagen: ""` y la sección se ve igual de bien.
 
 | campo | tipo | qué es | largo máx. | ayuda |
 |---|---|---|---|---|
@@ -247,6 +250,7 @@ Lo que dicen clientes reales. La IA NUNCA los inventa: deja cada uno "por comple
 
 - Tipos de página: `registro`, `vsl`, `ventas`, `local`, `evento`
 - Variantes: `tarjetas` (Tarjetas), `destacado` (Uno destacado)
+- **Ojo:** En esta skill: solo testimonios que la persona dio, tal cual. Si dice que te los va a pasar, cada uno va por completar; si no tiene, la sección **no va** (no se rellena con ejemplos).
 
 | campo | tipo | qué es | largo máx. | ayuda |
 |---|---|---|---|---|
@@ -266,6 +270,7 @@ Números que dan confianza (años, clientes, alumnos). SOLO cifras que dio la pe
 
 - Tipos de página: `local`, `ventas`, `registro`, `vsl`, `evento`
 - Variantes: `fila` (En fila)
+- **Ojo:** Solo cifras reales que dio la persona. Sin cifras, la sección no va.
 
 | campo | tipo | qué es | largo máx. | ayuda |
 |---|---|---|---|---|
@@ -461,6 +466,7 @@ Las entradas (o los planes) de 2 a 4 niveles lado a lado: cada uno con su nombre
 - Tipos de página: `evento`, `ventas`
 - Variantes: `tarjetas` (Tarjetas lado a lado)
 - Ancla: `#entradas` (los botones pueden llevar aquí)
+- **Ojo:** Precios, cupos y links SOLO los que dio la persona. Con dos o más entradas, el botón principal de la página lleva a `#entradas`.
 
 | campo | tipo | qué es | largo máx. | ayuda |
 |---|---|---|---|---|
@@ -532,6 +538,7 @@ Un bloque corto que invita a escribir por WhatsApp con cualquier duda antes de c
 
 - Tipos de página: `evento`, `ventas`, `vsl`, `registro`
 - Variantes: `tarjeta` (Tarjeta)
+- **Ojo:** Usa el WhatsApp de la página (`conversion.whatsapp`) si no se pone uno propio. Sin un número con código de país no se publica.
 
 | campo | tipo | qué es | largo máx. | ayuda |
 |---|---|---|---|---|
@@ -593,6 +600,7 @@ Lo primero que ve la persona después de registrarse o comprar: confirma, dice l
 
 - Tipos de página: `gracias`
 - Variantes: `confirmacion` (Confirmación)
+- **Ojo:** El motor agrega solo, debajo del texto y en este orden: la fecha y la modalidad del evento (si `evento.fecha` existe), el botón del grupo (si hay `grupoUrl`) y los botones «Google Calendar» e «iPhone / Outlook» para agendar la fecha. Los `pasos` van después: no repitas «agenda la fecha» ni digas «el botón de abajo».
 
 | campo | tipo | qué es | largo máx. | ayuda |
 |---|---|---|---|---|

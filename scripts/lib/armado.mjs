@@ -2,14 +2,17 @@
 // Cloudflare (modo «publicado») o para verlos en la compu (modo «vista»: lo que falta se ve marcado y el formulario no
 // envía nada). Lo usan armar.mjs, vista.mjs y publicar.mjs.
 import { copyFileSync, existsSync, mkdirSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
-import { basename, join } from 'node:path';
-import { FUENTES, motor, escribir } from './comun.mjs';
+import { basename, dirname, join } from 'node:path';
+import { FUENTES, motor, escribir, comando } from './comun.mjs';
 import { EXT_IMAGEN, EXT_VIDEO, resolutorFotos, copiarVideo } from './imagenes.mjs';
 
 const { normalizarPlan } = await motor('catalogo.js');
 const { renderPagina } = await motor('render.js');
 const { renderLegal } = await motor('legales.js');
 const { completarWhatsappPlan, paisDePagina } = await motor('telefono.js');
+const { resolverTemaPagina } = await motor('plantillas/index.js');
+const { cambioNotable, leerColores, CLAVES_ESTILO } = await motor('plantillas/propios.js');
+const { SECCIONES } = await motor('catalogo.js');
 
 const MARCA_SALIDA = '.crear-paginas';
 const FOTO_LOCAL = /^(\.\/)?fotos[\\/][^\s"'<>]+$/i;
@@ -169,10 +172,11 @@ export function armarSitio({ crudo, marca = {}, salida, modo = 'publicado', dirF
   for (const [ref, u] of usadas) {
     const peso = u.copias.reduce((s, c) => Math.max(s, c.peso), 0);
     fotos.push({ ref, peso });
-    if (u.copias.length === 1 && peso > 600 * 1024) {
-      avisos.push(`La foto ${ref} pesa ${(peso / 1024 / 1024).toFixed(1)} MB: la página va a cargar lenta en el celular. Optimízala con: node scripts/fotos.mjs`);
+    if (u.copias.length === 1 && peso > 500 * 1024) {
+      avisos.push(`La foto ${ref} pesa ${(peso / 1024 / 1024).toFixed(1)} MB: la página va a cargar lenta en el celular. Optimízala con: ${comando('fotos.mjs', dirname(dirFotos))}`);
     }
   }
+  avisos.push(...notasDeColor(plan));
 
   const archivos = [];
   const recorrer = (dir, prefijo = '') => {
@@ -184,6 +188,30 @@ export function armarSitio({ crudo, marca = {}, salida, modo = 'publicado', dirF
   };
   recorrer(salida);
   return { plan, archivos, fotos, avisos };
+}
+
+// Los colores que la persona pidió (tema.propios y el estilo de cada sección) que hubo que ajustar para que se lean: una
+// línea para contarle (el texto y los resaltados; el fondo y el botón siempre van tal cual).
+function notasDeColor(plan) {
+  const t = resolverTemaPagina(plan.tema);
+  const propios = leerColores(plan.tema?.propios) || {};
+  const notas = [];
+  const NOMBRES = { texto: ['el texto', false], acento: ['los resaltados', true] };
+  const nota = (pedidos, donde) => {
+    if (!Object.keys(pedidos).length) return;
+    const c = t.coloresCon(pedidos);
+    const cambiados = ['texto', 'acento'].filter((k) => pedidos[k] && c[k] && cambioNotable(pedidos[k], c[k]));
+    if (!cambiados.length) return;
+    const plural = cambiados.length > 1 || NOMBRES[cambiados[0]][1];
+    const lista = cambiados.map((k) => NOMBRES[k][0]).join(' y ');
+    notas.push(`${donde ? `En «${donde}»: ` : 'Ojo: '}${lista} no se ${plural ? 'leían' : 'leía'} con esos colores, así que ${plural ? 'los dejé' : 'lo dejé'} en el tono más parecido que sí se lee (díselo a la persona).`);
+  };
+  nota(propios, '');
+  for (const s of [...(plan.secciones || []), ...(plan.gracias?.secciones || [])]) {
+    const e = leerColores(s?.estilo, CLAVES_ESTILO);
+    if (e) nota({ ...propios, ...e }, SECCIONES[s.tipo]?.nombre || s.tipo);
+  }
+  return [...new Set(notas)];
 }
 
 // Para guardar un plan de ejemplo ya preparado en un archivo (lo usa la prueba).

@@ -13,11 +13,11 @@ const aqui = dirname(fileURLToPath(import.meta.url));
 export const FOTOS_EJEMPLOS = join(aqui, 'fotos');
 
 export const EJEMPLOS = [
-  { id: 'masterclass', tipo: 'registro', plantilla: 'nacar', negocio: 'Masterclass gratis de finanzas para freelancers (Bolsillo Claro)' },
-  { id: 'agenda', tipo: 'vsl', plantilla: 'clasica', negocio: 'VSL de un software de turnos para consultorios (Agenda Clara)' },
-  { id: 'curso-fotografia', tipo: 'ventas', plantilla: 'penumbra', negocio: 'Página de ventas de un curso de fotografía de producto' },
-  { id: 'despierta-hoy', tipo: 'evento', plantilla: 'prisma', negocio: 'Entradas para un encuentro presencial de desarrollo personal (Despierta Hoy)' },
-  { id: 'barberia', tipo: 'local', plantilla: 'voltaje', negocio: 'Barbería de barrio con reservas por WhatsApp' },
+  { id: 'masterclass', tipo: 'registro', plantilla: 'nacar', negocio: 'Bolsillo Claro, masterclass gratis de finanzas para freelancers' },
+  { id: 'agenda', tipo: 'vsl', plantilla: 'clasica', negocio: 'Agenda Clara, VSL de un software de turnos para consultorios' },
+  { id: 'curso-fotografia', tipo: 'ventas', plantilla: 'penumbra', negocio: 'un curso de fotografía de producto, página de ventas' },
+  { id: 'despierta-hoy', tipo: 'evento', plantilla: 'prisma', negocio: 'Despierta Hoy, entradas para un encuentro presencial de desarrollo personal' },
+  { id: 'barberia', tipo: 'local', plantilla: 'voltaje', negocio: 'una barbería de barrio con reservas por WhatsApp' },
 ];
 
 export const ejemplo = (id) => EJEMPLOS.find((e) => e.id === id) || null;

@@ -5,7 +5,7 @@ La plantilla es cómo se **ve** la página, no lo que dice: el mismo plan se pin
 contraste legible y tienen movimiento sutil (que se apaga solo si la persona tiene «reducir movimiento» o datos móviles
 lentos).
 
-Para que la persona las vea con sus propios ojos: `node scripts/vista.mjs --plantillas --tipo <su tipo>` (la misma
+Para que la persona las vea con sus propios ojos: `node "<skill>/scripts/vista.mjs" --plantillas --tipo <su tipo>` (la misma
 página de ejemplo con las 5, lado a lado, con «Ver completa» y «En celular»).
 
 | plantilla | `tema.plantilla` | cómo se ve | modo | letras (títulos + texto) |

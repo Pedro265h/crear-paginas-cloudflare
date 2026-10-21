@@ -10,9 +10,10 @@
 
 QUÉ VAMOS A HACER
 Una página de venta con diseño profesional (de las que se ven en lanzamientos grandes),
-publicada en internet con tu propio dominio, y con un formulario que guarda a cada
-persona que se registra en tu propia base de datos. También la página de gracias y tus
-páginas legales (privacidad y términos), que son obligatorias si recibes datos.
+publicada en internet con tu dominio (o una dirección gratis si todavía no tienes), y
+con un formulario que guarda a cada persona que se registra en tu propia base de datos.
+También la página de gracias y tus páginas legales (privacidad y términos), que son
+obligatorias si recibes datos.
 
 CÓMO LO VAMOS A HACER
 Tú me cuentas tu oferta con tus palabras. Yo escribo los textos, armo la página con una

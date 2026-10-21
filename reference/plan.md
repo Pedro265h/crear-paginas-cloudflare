@@ -87,7 +87,8 @@ Van en la carpeta `fotos/` del proyecto. En el plan se nombran con su ruta:
   Para videos largos (una VSL), mejor un link de YouTube, Vimeo, VTurb, Panda o Wistia.
 - ícono de la pestaña: un archivo `fotos/favicon.png` (o .svg / .ico).
 
-Fotos pesadas (de celular): corre `node scripts/fotos.mjs` y el motor usa solo los tamaños livianos (480, 960 y 1600 px).
+Fotos pesadas (de celular): corre `node "<skill>/scripts/fotos.mjs" --proyecto "<pagina>"` y el motor usa solo los tamaños
+livianos (480, 960 y 1600 px).
 Las de los ejemplos van como `{ "ref": "barberia-hero" }`, que es lo mismo con otra forma de escribirlo.
 
 ## marca.json (los datos de las páginas legales)
@@ -97,7 +98,7 @@ Las de los ejemplos van como `{ "ref": "barberia-hero" }`, que es lo mismo con o
   "nombre": "Bolsillo Claro",
   "pais": "Colombia",
   "legal": { "razon_social": "Bolsillo Claro SAS (o tu nombre completo)", "documento": "900123456-7" },
-  "contacto": { "correo": "hola@bolsilloclaro.com", "whatsapp": "+573001234567" }
+  "contacto": { "correo": "hola@ejemplo.com", "whatsapp": "+573001234567" }
 }
 ```
 
@@ -108,7 +109,13 @@ Las de los ejemplos van como `{ "ref": "barberia-hero" }`, que es lo mismo con o
   Chile, CUIT en Argentina, NIF o CIF en España).
 - Las legales son una plantilla general: dile a la persona que las revise con un abogado si su negocio lo necesita.
 
+## Claves que pone el motor solo
+
+Al crear la página, `nuevo.mjs` deja también `estrategia` (notas internas: avatar, promesa y ángulo; no se ven en la
+página) y `conversion.webhook` (no se usa: el webhook se guarda como secreto con `secreto.mjs`). Puedes dejarlas así.
+
 ## estado.json y ESTADO.md
 
-Los escriben los scripts (no los edites a mano salvo para corregir algo puntual): nombre en Cloudflare, base de
-registros, dirección publicada, dominios, fase y el siguiente paso. Al empezar una sesión nueva, léelos para retomar.
+Los escriben los scripts: nombre en Cloudflare, base de registros, dirección publicada, dominios, fase y el siguiente
+paso. Al empezar una sesión nueva, léelos para retomar. Solo se tocan a mano en dos casos de `walkthroughs/99-problemas.md`
+(borrar `"base"` si la base quedó mal conectada, o poner `"limite_registros"`).

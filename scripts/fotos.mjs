@@ -3,7 +3,7 @@
 // tamaños en WebP (retrato-480.webp, retrato-960.webp y retrato-1600.webp) y deja la original como está. armar.mjs usa
 // esos tamaños solos (el celular baja el chico y la compu el grande). Usa sharp-cli con npx (se descarga la primera vez).
 //
-//   node scripts/fotos.mjs [carpeta]        las fotos de más de 250 KB o más anchas de 1600 px
+//   node scripts/fotos.mjs --proyecto <carpeta>   las fotos de más de 500 KB o más anchas de 1600 px
 //   --todas                                 todas las fotos, aunque sean livianas
 import { spawnSync } from 'node:child_process';
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
@@ -26,7 +26,7 @@ const candidatas = readdirSync(fotos)
     const [ancho] = medidas(readFileSync(ruta)) || [0];
     return { f, ruta, peso, ancho, base: f.replace(/\.[^.]+$/, '') };
   })
-  .filter((x) => args.todas || x.peso > 250 * 1024 || x.ancho > 1600);
+  .filter((x) => args.todas || x.peso > 500 * 1024 || x.ancho > 1600);
 
 if (!candidatas.length) {
   ok('Tus fotos ya están livianas: no hay nada que optimizar.');
@@ -34,10 +34,17 @@ if (!candidatas.length) {
 }
 linea(`Optimizo ${candidatas.length} ${candidatas.length === 1 ? 'foto' : 'fotos'} (la primera vez se descarga la herramienta: 1 minuto)…`);
 
+// Los tamaños de cada foto, sin agrandarla: 480, 960 y 1600 px (o su ancho real si está entre 960 y 1600).
+const tamanos = (x) => {
+  if (!x.ancho) return ANCHOS;
+  const t = ANCHOS.filter((w) => w <= x.ancho);
+  if (x.ancho > 960 && x.ancho < 1600) t.push(x.ancho);
+  return t.length ? t : [x.ancho];
+};
 let hechas = 0;
-for (const w of ANCHOS) {
-  // Solo los tamaños que no agrandan la foto (una foto de 800 px no se estira a 1600).
-  const lote = candidatas.filter((x) => !x.ancho || x.ancho >= w || (w === ANCHOS[0] && x.ancho < w));
+const todos = [...new Set(candidatas.flatMap(tamanos))].sort((a, b) => a - b);
+for (const w of todos) {
+  const lote = candidatas.filter((x) => tamanos(x).includes(w));
   if (!lote.length) continue;
   const r = spawnSync(
     process.platform === 'win32' ? 'npx.cmd' : 'npx',
@@ -48,7 +55,7 @@ for (const w of ANCHOS) {
   hechas += lote.length;
 }
 for (const x of candidatas) {
-  const nuevas = ANCHOS.map((w) => join(fotos, `${x.base}-${w}.webp`)).filter(existsSync);
+  const nuevas = tamanos(x).map((w) => join(fotos, `${x.base}-${w}.webp`)).filter(existsSync);
   const mayor = nuevas.length ? statSync(nuevas[nuevas.length - 1]).size : 0;
   ok(`${x.f}: ${(x.peso / 1024).toFixed(0)} KB → ${nuevas.length} tamaños en WebP (el más grande, ${(mayor / 1024).toFixed(0)} KB)`);
 }

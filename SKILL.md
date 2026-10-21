@@ -71,7 +71,11 @@ textos o un prompt sin publicar nada.
 4. **Cualquier cambio de color se hace.** Nunca «así es el diseño» ni razones internas (`reference/colores-y-cambios.md`).
 5. **Sin promesas de ingresos garantizados** ni nada que Meta rechace (`reference/copy.md` §1).
 6. **No edites a mano** `sitio/`, `.vista/`, `wrangler.jsonc`, `estado.json` ni `ESTADO.md`: los escriben los scripts.
-   Tú editas `plan.json`, `marca.json` y las fotos.
+   Tú editas `plan.json`, `marca.json` y las fotos. (Única excepción: los dos arreglos de `estado.json` que indica
+   `walkthroughs/99-problemas.md`.)
+7. **Los ejemplos son modelo de tono y estructura, no de datos.** Sus nombres, fechas, horarios, cupos («Cupos
+   limitados»), precios y links son de negocios ficticios: nunca los copies a la página de la persona. Sus fechas van
+   como `{{fecha}}`, `{{dia}}`…: si quedara alguno en el plan, `revisar.mjs` lo marca.
 
 ---
 
@@ -144,10 +148,11 @@ Para que tu compu pueda publicar en tu cuenta hay dos caminos:
 
    - Camino 1: corre `npx --yes wrangler@4 login` (espera hasta 5 minutos a que la persona toque «Permitir»).
    - Camino 2: guíala a `https://dash.cloudflare.com/profile/api-tokens` con la plantilla «Editar Cloudflare Workers»
-     (Edit Cloudflare Workers) + Cuenta › D1 › Editar + Zona › DNS › Editar (si va a conectar dominio). Cuando diga
-     «copiado»: `node "<skill>/scripts/token.mjs" --portapapeles`.
+     (Edit Cloudflare Workers) + Cuenta › D1 › Editar y, si va a conectar dominio, Zona › DNS › Editar y
+     Zona › Zona › Leer. Cuando diga «copiado»: `node "<skill>/scripts/token.mjs" --portapapeles`.
 6. **Verificar:** `node "<skill>/scripts/preparar.mjs"` otra vez. Tiene que decir «Conectada a Cloudflare». Si tiene
-   varias cuentas, pregúntale en cuál y corre `node "<skill>/scripts/token.mjs" --cuenta <id>`.
+   varias cuentas, `preparar.mjs` muestra cada nombre con su comando: pregúntale en cuál quiere su página y corre ese
+   (`token.mjs --cuenta <id>`, sirve con token o con la sesión).
 
 ```
 ¡Listo! Tu compu ya está preparada y conectada a tu Cloudflare. Esto no se vuelve a
@@ -161,10 +166,12 @@ Sigue `reference/entrevista.md` en este orden, **una pregunta por mensaje**:
 1. **Qué quiere lograr** → el tipo (`registro`, `vsl`, `ventas`, `evento` o `local`).
 2. **Nombre de su marca** → crea la carpeta de la página:
    `node "<skill>/scripts/nuevo.mjs" --nombre "<Marca>" --tipo <tipo>` (dice dónde quedó: esa es `<pagina>`).
-3. **Su oferta**, con los datos reales de su tipo (precios, fecha, links de pago o WhatsApp…). Lo que no sepa queda
-   por completar: díselo («Eso lo dejo marcado y me lo pasas cuando lo tengas»).
-4. **Su marca:** país, colores (o una paleta propuesta) y logo, y sus **datos legales** (razón social o nombre,
-   número tributario, correo de contacto).
+3. **Su oferta**: qué ofrece, para quién, qué resultado y **qué se lleva** la gente (3 a 5 cosas), y los datos reales
+   de su tipo (precios, fecha, links de pago o WhatsApp…). Después, **testimonios reales** y **cifras reales** (una
+   pregunta cada uno: si no tiene, esas secciones no van). Lo que no sepa queda por completar: díselo («Eso lo dejo
+   marcado y me lo pasas cuando lo tengas»).
+4. **Su marca:** país, colores (cómo pasar sus colores a los cuatro del tema: `reference/entrevista.md` §4) y logo, y
+   sus **datos legales** (razón social o nombre, número tributario, correo de contacto).
 5. **La plantilla:** `node "<skill>/scripts/vista.mjs" --plantillas --tipo <tipo>` y dile:
 
 ```
@@ -185,14 +192,16 @@ Para tu página te recomiendo [plantilla]: [una frase de por qué].
 1. **Lee antes de escribir:** `reference/plan.md`, `reference/copy.md`, la receta de su tipo en
    `reference/secciones.md` y el ejemplo de su tipo (`ejemplos/masterclass.json` registro, `agenda.json` vsl,
    `curso-fotografia.json` ventas, `despierta-hoy.json` evento, `barberia.json` local) como modelo de tono y estructura.
-2. **Escribe `<pagina>/plan.json`** completo (con la herramienta de escribir archivos): el tipo, la plantilla elegida
+2. **Escribe `<pagina>/plan.json`** completo (`nuevo.mjs` ya dejó uno de arranque: léelo primero y reemplázalo entero
+   con la herramienta de escribir archivos): el tipo, la plantilla elegida
    (`tema.plantilla`, y `tema.letras: ""` si no es la Clásica), sus colores en `tema.colores`, la acción y el botón
    (`conversion`), el evento si aplica, el video si es VSL, el SEO, todas las secciones de la receta con textos que
    venden escritos con **sus** datos, y la página de gracias. Lo que no dio: por completar. Una sección que no aplica
    (por ejemplo testimonios si no tiene): no la pongas.
 3. **Escribe `<pagina>/marca.json`** (nombre, país, datos legales y contacto).
-4. **Fotos:** pon cada foto en su campo como `"fotos/archivo.jpg"`. Si alguna pesa más de 500 KB:
-   `node "<skill>/scripts/fotos.mjs" --proyecto "<pagina>"`.
+4. **Fotos:** pon cada foto en su campo como `"fotos/archivo.jpg"`. Si alguna pesa más de 500 KB (la vista lo avisa):
+   `node "<skill>/scripts/fotos.mjs" --proyecto "<pagina>"`. Sin foto de quien enseña: `imagen` por completar si te la
+   va a pasar, o `imagen: ""` si no tiene (`reference/secciones.md` › experto).
 5. **Muéstrala:** `node "<skill>/scripts/vista.mjs" --proyecto "<pagina>"` (abre su navegador; queda prendida y se
    actualiza sola cada vez que vuelvas a correrla).
 6. **Revisa:** `node "<skill>/scripts/revisar.mjs" --proyecto "<pagina>"` y díselo así:
@@ -214,10 +223,11 @@ quitar o agregar partes.
 Cada pedido («cambia el botón a rojo», «quita la sección de precios», «pon mi foto», «más corto el título»):
 
 1. Tradúcelo a un cambio del plan con `reference/colores-y-cambios.md` (colores: `tema.propios` para toda la página,
-   `estilo` de la sección para una parte; **nunca** te niegues a un color).
+   `estilo` de la sección para una parte; «el botón en rojo» sin decir cuál = todos; **nunca** te niegues a un color).
 2. Edita `plan.json` (o `marca.json`) solo en eso.
 3. `node "<skill>/scripts/vista.mjs" --proyecto "<pagina>"` (el navegador se actualiza solo).
-4. Una línea en pasado: «Listo: puse el botón en rojo.» Si para que se lea el color tuvo que cambiar un poco, dilo.
+4. Una línea en pasado: «Listo: puse el botón en rojo.» Si la vista avisa que un color se ajustó para que se lea
+   («Ojo: …»), cuéntaselo en esa misma línea.
 5. Si un pedido tiene dos lecturas muy distintas, pregunta con 2 o 3 opciones y no cambies nada todavía.
 
 Repite hasta que diga que le gusta. Si pide un dato que no tienes (precio, testimonio), por completar y pídeselo.
@@ -225,7 +235,8 @@ Repite hasta que diga que le gusta. Si pide un dato que no tienes (precio, testi
 ## Fase 5 · Publicar
 
 1. `node "<skill>/scripts/revisar.mjs" --proyecto "<pagina>"`: tiene que decir «se puede publicar». Si no, vuelve a la
-   Fase 3 §6 con lo que falta (o quita esas partes con su permiso).
+   Fase 3 §6 con lo que falta. Si un dato no va a llegar, quita esa parte con su permiso: una sección se borra del plan
+   (o `"oculta": true`), una foto se deja en `""`, un ítem de una lista se borra (`reference/colores-y-cambios.md`).
 2. Pregúntale: «Tu página está completa. ¿La publico en tu Cloudflare?»
 3. Con su sí: `node "<skill>/scripts/publicar.mjs" --proyecto "<pagina>"`. Tarda 1 o 2 minutos: crea su base de
    registros, sube la página y comprueba en vivo la página, gracias, privacidad, términos y un registro de prueba (que
@@ -260,8 +271,8 @@ Ofrécele, una cosa a la vez (`walkthroughs/06-registros-y-webhook.md`):
 - **Mandarlos a su CRM (GoHighLevel, Zapier o Make):** que copie el link del webhook y
   `node "<skill>/scripts/secreto.mjs" WEBHOOK_URL --valor "<link>" --proyecto "<pagina>"` (manda un registro de
   ejemplo para mapear campos).
-- **Píxel de Meta:** su id en `plan.json` → `pixel.meta` y volver a publicar. Opcional, la API de conversiones:
-  `secreto.mjs META_CAPI_TOKEN --portapapeles`.
+- **Píxel de Meta:** su id en `plan.json` → `pixel.meta` y volver a publicar. Opcional, la API de conversiones (que
+  copie el token y diga «copiado»): `node "<skill>/scripts/secreto.mjs" META_CAPI_TOKEN --portapapeles --proyecto "<pagina>"`.
 - **Cambios después:** «cuando quieras cambiar algo, ábreme en la carpeta de tu página y dime qué cambiar: lo cambio,
   te lo muestro y lo vuelvo a publicar».
 - **Retomar en otra sesión:** todo queda en `<pagina>/ESTADO.md`. «Abre Claude Code en la carpeta de tu página y dime

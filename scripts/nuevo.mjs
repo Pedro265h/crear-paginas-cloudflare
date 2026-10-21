@@ -9,11 +9,11 @@
 import { copyFileSync, existsSync, mkdirSync, readdirSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join, resolve } from 'node:path';
-import { argumentos, fallar, ok, linea, motor, escribirJSON, guardarEstado, escribirWrangler, nombreCloudflare, PLANTILLA_SITIO } from './lib/comun.mjs';
+import { argumentos, fallar, ok, linea, motor, escribirJSON, guardarEstado, escribirWrangler, nombreCloudflare, PLANTILLA_SITIO, comando } from './lib/comun.mjs';
 
 const args = argumentos();
 const nombreMarca = String(args.nombre || args._[0] || '').trim();
-if (!nombreMarca) fallar('Dime el nombre de la página o de la marca.', 'Ejemplo: node scripts/nuevo.mjs --nombre "Despierta Hoy" --tipo evento');
+if (!nombreMarca) fallar('Dime el nombre de la página o de la marca.', `Ejemplo: ${comando('nuevo.mjs', '', '--nombre "Despierta Hoy" --tipo evento')}`);
 
 const { planBase, TIPOS } = await motor('catalogo.js');
 const { PLANTILLAS, plantillaValida } = await motor('plantillas/index.js');

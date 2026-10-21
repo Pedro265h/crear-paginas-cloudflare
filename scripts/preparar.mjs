@@ -6,7 +6,7 @@
 //   node scripts/preparar.mjs --json     el resultado en JSON (para Claude)
 import { spawnSync } from 'node:child_process';
 import { platform, release } from 'node:os';
-import { argumentos } from './lib/comun.mjs';
+import { argumentos, comando } from './lib/comun.mjs';
 import { wrangler, quienSoy, leerCredenciales, RUTA_CREDENCIALES, WRANGLER } from './lib/cloudflare.mjs';
 
 const args = argumentos();
@@ -37,7 +37,7 @@ if (r.wrangler && !args.rapido) {
   r.sesion = s.conectado ? { conectado: true, forma: s.forma, correo: s.correo, cuentas: s.cuentas } : { conectado: false };
   if (!s.conectado) r.faltan.push({ que: 'sesion', texto: 'Tu compu todavía no está conectada a tu cuenta de Cloudflare (walkthroughs/02-cuenta-cloudflare.md y 03-token-api.md).' });
   else if (s.cuentas.length > 1 && !cred?.cuenta?.id && !process.env.CLOUDFLARE_ACCOUNT_ID) {
-    r.faltan.push({ que: 'cuenta', texto: 'Tu usuario tiene varias cuentas de Cloudflare: hay que elegir en cuál publicar (node scripts/token.mjs --cuenta <id>).' });
+    r.faltan.push({ que: 'cuenta', texto: 'Tu usuario tiene varias cuentas de Cloudflare: hay que elegir en cuál publicar:\n' + s.cuentas.map((c) => `      ${c.nombre} → ${comando('token.mjs', '', '--cuenta ' + c.id)}`).join('\n') });
   }
 }
 

@@ -26,9 +26,10 @@ Cuando veas "Successfully logged in" (o algo parecido), vuelve aquí y dime "lis
 
 2. Si el navegador no se abrió: en lo que imprimió el comando hay un link largo que empieza con
    `https://dash.cloudflare.com/oauth2/auth…`. Pásale **solo ese link** y que lo abra a mano.
-3. Comprueba con `node <skill>/scripts/preparar.mjs`: tiene que decir «Conectada a Cloudflare con tu sesión».
+3. Comprueba con `node "<skill>/scripts/preparar.mjs"`: tiene que decir «Conectada a Cloudflare con tu sesión».
 4. Si tiene varias cuentas, `preparar.mjs` lo dice y muestra sus nombres: pregúntale en cuál quiere su página y
-   guarda esa con `node <skill>/scripts/token.mjs --cuenta <id>` (sirve también con la sesión, sin token).
+   guarda esa con `node "<skill>/scripts/token.mjs" --cuenta <id>` (los ids salen en `preparar.mjs`; sirve también con
+   la sesión, sin token).
 
 ## Camino (b) · Token de API (paso a paso)
 
@@ -80,8 +81,8 @@ Enter. Cuando diga "Token guardado y funcionando", dime "listo".
 
 ### 3. Comprobar
 
-`node <skill>/scripts/token.mjs --estado` y `node <skill>/scripts/preparar.mjs`. Si su usuario tiene varias cuentas,
-`token.mjs` las lista: pregúntale cuál y corre `node <skill>/scripts/token.mjs --cuenta <id>`.
+`node "<skill>/scripts/token.mjs" --estado` y `node "<skill>/scripts/preparar.mjs"`. Si su usuario tiene varias cuentas,
+`token.mjs` las lista: pregúntale cuál y corre `node "<skill>/scripts/token.mjs" --cuenta <id>`.
 
 ### Si pegó el token en el chat por error
 
@@ -99,6 +100,6 @@ No lo uses, no lo repitas y no lo guardes en ningún archivo.
 1. **Nunca** se imprime, se pega en el chat, se escribe en el plan, en `wrangler.jsonc` ni en ningún archivo de la
    página. Vive solo en `~/.config/crear-paginas/cloudflare.json`.
 2. Nunca uses la «Global API Key» (la llave maestra de la cuenta): solo un token con los permisos de arriba.
-3. Para quitarlo de la compu: `node <skill>/scripts/token.mjs --borrar` (y si ya no lo usa, eliminarlo en Cloudflare).
+3. Para quitarlo de la compu: `node "<skill>/scripts/token.mjs" --borrar` (y si ya no lo usa, eliminarlo en Cloudflare).
 4. Si un comando dice que falta un permiso (error 10000, 9109 o «Authentication error»), crea uno nuevo con los
    permisos de arriba (ver `99-problemas.md`).

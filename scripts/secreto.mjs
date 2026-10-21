@@ -11,7 +11,7 @@
 // Al guardar el webhook manda un registro de ejemplo a ese link (así GoHighLevel, Zapier o Make ven los campos).
 // La página tiene que estar publicada antes (node scripts/publicar.mjs).
 import { spawnSync } from 'node:child_process';
-import { argumentos, carpetaProyecto, leerProyecto, guardarEstado, fallar, ok, aviso, linea } from './lib/comun.mjs';
+import { argumentos, carpetaProyecto, leerProyecto, guardarEstado, fallar, ok, aviso, linea, comando } from './lib/comun.mjs';
 import { wrangler, explicarError } from './lib/cloudflare.mjs';
 
 const args = argumentos();
@@ -19,7 +19,7 @@ const NOMBRES = { WEBHOOK_URL: 'el webhook', META_CAPI_TOKEN: 'el token de la AP
 const nombre = String(args._[0] || '').toUpperCase();
 const dir = carpetaProyecto({ ...args, _: [] });
 const { estado } = leerProyecto(dir);
-if (!estado.url && !estado.publicado) fallar('Primero publica la página (node scripts/publicar.mjs): el secreto se guarda en la página publicada.');
+if (!estado.url && !estado.publicado) fallar(`Primero publica la página (${comando('publicar.mjs', dir)}): el secreto se guarda en la página publicada.`);
 
 function fallaCF(que, r) {
   const e = explicarError(r.todo);

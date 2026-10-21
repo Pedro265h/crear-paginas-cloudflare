@@ -9,14 +9,14 @@
 //   --local                                         de la base de prueba de tu compu (wrangler dev), no de Cloudflare
 //   --con-pruebas                                   incluye los registros de prueba de la skill
 import { join, resolve } from 'node:path';
-import { argumentos, carpetaProyecto, leerProyecto, escribir, fallar, ok, linea } from './lib/comun.mjs';
+import { argumentos, carpetaProyecto, leerProyecto, escribir, fallar, ok, linea, comando } from './lib/comun.mjs';
 import { wrangler, explicarError } from './lib/cloudflare.mjs';
 
 const args = argumentos();
 const dir = carpetaProyecto(args);
 const { estado } = leerProyecto(dir);
 const base = estado.base?.nombre;
-if (!base) fallar('Esta página todavía no tiene base de registros.', 'Se crea al publicar: node scripts/publicar.mjs');
+if (!base) fallar('Esta página todavía no tiene base de registros.', `Se crea al publicar: ${comando('publicar.mjs', dir)}`);
 const donde = args.local ? '--local' : '--remote';
 const desde = args.desde ? String(args.desde) : '';
 if (desde && !/^\d{4}-\d{2}-\d{2}$/.test(desde)) fallar('La fecha va así: --desde 2026-10-01');

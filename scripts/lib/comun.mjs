@@ -32,6 +32,11 @@ export function argumentos(lista = process.argv.slice(2)) {
 
 // ---------- mensajes (español simple; sin jerga) ----------
 
+// El comando completo de un script, con rutas absolutas (sirve desde cualquier carpeta): lo que se le muestra a Claude.
+export const comando = (script, dir, extra = '') => `node "${join(SKILL, 'scripts', script)}"${dir ? ` --proyecto "${dir}"` : ''}${extra ? ' ' + extra : ''}`;
+// «1 cosa» / «3 cosas»
+export const cosas = (n) => (n === 1 ? '1 cosa' : `${n} cosas`);
+
 export const ok = (t) => console.log('  ✓ ' + t);
 export const aviso = (t) => console.log('  ! ' + t);
 export const paso = (t) => console.log('\n→ ' + t);
@@ -86,7 +91,7 @@ export function carpetaProyecto(args) {
 
 export function exigirProyecto(dir) {
   if (!existsSync(join(dir, 'plan.json'))) {
-    fallar(`No encuentro plan.json en ${dir}.`, 'Corre el script desde la carpeta de la página o pásale la carpeta: --proyecto <carpeta>. Para empezar una nueva: node scripts/nuevo.mjs');
+    fallar(`No encuentro plan.json en ${dir}.`, `Pásale la carpeta de la página: --proyecto "<carpeta>". Para empezar una nueva: ${comando('nuevo.mjs', '', '--nombre "<Marca>" --tipo <tipo>')}`);
   }
 }
 

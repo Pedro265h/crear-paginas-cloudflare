@@ -5,12 +5,12 @@
 //   node scripts/revisar.mjs [carpeta]   lista lo que falta (sale con código 1 si falta algo)
 //   --json                               el resultado en JSON (para Claude)
 import { join } from 'node:path';
-import { argumentos, carpetaProyecto, leerProyecto, guardarEstado } from './lib/comun.mjs';
+import { argumentos, carpetaProyecto, leerProyecto, guardarEstado, comando } from './lib/comun.mjs';
 import { pendientesDe } from './lib/pendientes.mjs';
 
 const args = argumentos();
 const dir = carpetaProyecto(args);
-const { plan: crudo, marca } = leerProyecto(dir);
+const { plan: crudo, marca, estado } = leerProyecto(dir);
 let r;
 try {
   r = pendientesDe(crudo, marca, { dirFotos: join(dir, 'fotos') });
@@ -19,7 +19,12 @@ try {
   process.exit(2);
 }
 const { faltan, avisos } = r;
-guardarEstado(dir, { pendientes: faltan.length });
+guardarEstado(dir, {
+  pendientes: faltan.length,
+  ...(estado.publicado ? {} : faltan.length
+    ? { fase: 'Fase 3/4 · completar y ajustar la página', siguiente: `Completar lo que falta (${comando('revisar.mjs', dir)}) y pedir cambios.` }
+    : { fase: 'Fase 4/5 · la página se puede publicar', siguiente: `Cuando le guste: publicar (${comando('publicar.mjs', dir)}).` }),
+});
 
 if (args.json) {
   console.log(JSON.stringify({ listo: !faltan.length, faltan, avisos }, null, 2));

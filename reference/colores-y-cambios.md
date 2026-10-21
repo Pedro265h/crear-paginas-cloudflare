@@ -1,14 +1,15 @@
 # Cambios por órdenes (Fase 4)
 
 La persona pide en sus palabras; tú editas `plan.json` (o `marca.json`), vuelves a armar la vista
-(`node scripts/vista.mjs`, se actualiza sola en el navegador) y le cuentas en una línea qué cambiaste, en pasado:
+(`node "<skill>/scripts/vista.mjs" --proyecto "<pagina>"`, se actualiza sola en el navegador) y le cuentas en una línea qué cambiaste, en pasado:
 «Listo: puse el botón en rojo.» Cambia **solo** lo que pidió; conserva los datos reales que ya estaban.
 
 ## Regla de oro de los colores
 
 **Cualquier pedido de color se hace, siempre.** Nunca digas «así es el diseño», «la plantilla no deja» ni des razones
 internas. El motor ajusta solo lo necesario para que todo se lea (mueve la luz del color, en el mismo tono, hasta que
-el texto tenga buen contraste); si para leerse tuvo que cambiar mucho, cuéntalo en una línea: «Ojo: el texto no se
+el texto tenga buen contraste); si para leerse tuvo que cambiar mucho (la vista lo avisa con «Ojo: …» o «En "sección": …»),
+cuéntalo en una línea: «Ojo: el texto no se
 leía con ese fondo, así que lo dejé en el tono más parecido que sí se lee.»
 
 Todo color va en hex `#rrggbb`. Si hay dos interpretaciones muy distintas («ponlo azul»: ¿el fondo o los botones?),
@@ -20,6 +21,7 @@ primera», «todos»), haz lo que proponías.
 | la persona dice | qué cambias |
 |---|---|
 | «todos los botones rojos», «los botones en rojo» | `tema.propios.primario` |
+| «el botón en rojo» (sin decir cuál) | `tema.propios.primario` (todos: la página tiene una sola acción) y ofrécele «Si querías solo el de la portada, dime» |
 | «el botón de la portada rojo», «este botón» | `estilo.primario` de esa sección |
 | «fondo blanco», «ponla blanca», «toda la página negra» | `tema.propios.fondo` (y si hace falta `tema.propios.texto`) |
 | «el fondo de esta sección (o de la portada) negro» | `estilo.fondo` de esa sección |
@@ -91,13 +93,13 @@ tono, elige uno bonito y dile cuál pusiste.
 | «este es el video» | `video.url` (VSL) o el `url` de la sección `video` |
 | «que el botón aparezca al minuto 8» | `video.ctaSegundos: 480` |
 
-Fotos de celular: después de copiarlas corre `node scripts/fotos.mjs` (las deja livianas).
+Fotos de celular: después de copiarlas corre `node "<skill>/scripts/fotos.mjs" --proyecto "<pagina>"` (las deja livianas).
 
 ## Diseño
 
 | la persona dice | qué cambias |
 |---|---|
-| «muéstrame cómo se vería con otro diseño» | `node scripts/vista.mjs --plantillas --tipo <tipo>` (ejemplo) o cambia `tema.plantilla` y arma |
+| «muéstrame cómo se vería con otro diseño» | `node "<skill>/scripts/vista.mjs" --plantillas --tipo <tipo>` (ejemplo) o cambia `tema.plantilla` y vuelve a correr la vista |
 | «usa Voltaje» | `tema.plantilla: "voltaje"` y `tema.letras: ""` |
 | «otras letras», «letras más elegantes» | `tema.letras` con una pareja (plantillas.md › Letras) |
 | «más redondeado», «bordes rectos» (Clásica) | `tema.radio`: `redondo` / `recto` |
@@ -114,5 +116,6 @@ Fotos de celular: después de copiarlas corre `node scripts/fotos.mjs` (las deja
 | «mi píxel de Meta es 123…» | `pixel.meta` (solo números) y vuelve a publicar |
 | «el título que sale en Google / al compartir» | `seo.titulo` y `seo.descripcion` |
 
-Después de cualquier cambio: `node scripts/vista.mjs` (se ve al instante). Si la página ya estaba publicada, pregunta
-«¿La publico con este cambio?» y, con un sí, `node scripts/publicar.mjs`.
+Después de cualquier cambio: `node "<skill>/scripts/vista.mjs" --proyecto "<pagina>"` (se ve al instante). Si la página
+ya estaba publicada, pregunta «¿La publico con este cambio?» y, con un sí,
+`node "<skill>/scripts/publicar.mjs" --proyecto "<pagina>"`.

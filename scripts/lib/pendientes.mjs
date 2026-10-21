@@ -122,6 +122,10 @@ export function pendientesDe(crudo, marca = {}, { dirFotos } = {}) {
   // Los datos legales van en privacidad y términos (obligatorios si la página recoge datos).
   for (const que of faltanDatosLegales(marcaLegal(marca, plan))) agregar('Datos legales (marca.json)', que);
 
+  // Marcadores de plantilla que quedaron sin reemplazar ({{fecha}}, {{dia}}…: los usan los ejemplos de la skill).
+  const marcadores = new Set((JSON.stringify(crudo).match(/\{\{\s*[\w.-]+\s*\}\}/g) || []));
+  for (const m of marcadores) agregar('Textos de la página', `cambiar «${m}» por el dato real (es un marcador de los ejemplos)`);
+
   // Avisos (no bloquean).
   if (!plan.seo?.titulo) avisos.push('La página no tiene título para Google y las redes (seo.titulo).');
   if (!plan.seo?.descripcion) avisos.push('La página no tiene descripción para Google y las redes (seo.descripcion).');

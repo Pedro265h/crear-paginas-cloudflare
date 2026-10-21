@@ -9,7 +9,7 @@
 //   node scripts/token.mjs --cuenta <id>    elige la cuenta de Cloudflare (si tu usuario tiene varias)
 //   node scripts/token.mjs --borrar         lo borra de tu compu
 import { spawnSync } from 'node:child_process';
-import { argumentos, fallar, ok, aviso, linea } from './lib/comun.mjs';
+import { argumentos, fallar, ok, aviso, linea, comando } from './lib/comun.mjs';
 import { api, guardarCredenciales, leerCredenciales, borrarCredenciales, RUTA_CREDENCIALES } from './lib/cloudflare.mjs';
 
 const args = argumentos();
@@ -138,5 +138,5 @@ if (args.portapapeles) ok('Vacié tu portapapeles para que no quede copiado.');
 if (datos.cuenta) ok(`Cuenta de Cloudflare: ${datos.cuenta.nombre || datos.cuenta.id}`);
 else if (r.cuentas.length > 1) {
   aviso('Tu usuario tiene varias cuentas de Cloudflare. Dime en cuál publicar:');
-  for (const c of r.cuentas) linea(`  · ${c.nombre} → node scripts/token.mjs --cuenta ${c.id}`);
+  for (const c of r.cuentas) linea(`  · ${c.nombre} → ${comando('token.mjs', '', '--cuenta ' + c.id)}`);
 } else aviso('No pude ver tus cuentas con este token: revisa que tenga el permiso «Configuración de la cuenta: Leer» (Account Settings: Read).');

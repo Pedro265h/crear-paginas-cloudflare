@@ -41,8 +41,9 @@ plantillas se pensaron.
 - **Puntos clave (opcional):** 3, cortos y concretos (máx. 6 palabras cada uno).
 - **Botón:** verbo en primera persona + lo que recibe: «Reservar mi cupo gratis», «Quiero mi acceso», «Agendar mi
   cita», «Escribir por WhatsApp», «Quiero mi entrada». Nunca «Enviar» ni «Clic aquí». Máximo 32 caracteres.
-- **Nota bajo el botón:** quita el miedo con 2 o 3 datos separados por « · »: «100% gratis · En vivo · Cupos limitados»,
-  «Pago seguro · Acceso inmediato», «Respondemos en minutos». Solo datos ciertos.
+- **Nota bajo el botón:** quita el miedo con 2 o 3 datos separados por « · »: «100% gratis · En vivo · Queda grabada»,
+  «Pago seguro · Acceso inmediato», «Respondemos en minutos». Solo datos ciertos: «Cupos limitados» únicamente si la
+  persona dijo que hay cupos.
 
 ## 3. Recetas por tipo de página
 
@@ -98,7 +99,8 @@ preguntas (¿domicilios?, ¿formas de pago?, ¿necesito cita?) y cierre.
 - **Cierre:** repite la promesa en una frase, nombra lo que se pierde si no actúa y vuelve el botón.
 - **Testimonios:** solo los que dio la persona, citados tal cual (se pueden acortar sin cambiar el sentido). Sin
   testimonios reales, la sección se quita (no se rellena con ejemplos).
-- **Quién te enseña:** su historia en primera persona y logros que la persona contó. Sin foto, por completar.
+- **Quién te enseña:** su historia en primera persona y logros que la persona contó. Foto: si te la va a pasar, por
+  completar; si no tiene, `imagen: ""` (la sección se ve bien sin foto).
 - **Pie (`pie.texto`):** en cursos y mentorías, el aviso «Esta formación es educativa y no garantiza resultados ni
   ingresos específicos.»
 
@@ -113,5 +115,7 @@ preguntas (¿domicilios?, ¿formas de pago?, ¿necesito cita?) y cierre.
 
 - Alterna secciones de texto con secciones visuales (tarjetas, cifras, comparación, foto).
 - En páginas largas, un botón intermedio cada 2 o 3 secciones (no en todas).
+- Horas: el motor pinta la fecha y la hora del evento solo, en formato de 24 horas («16:00 (hora de Colombia)»). En
+  tus textos escribe la hora igual, para no mezclar «4:00 p. m.» con «16:00».
 - El SEO también se escribe: `seo.titulo` (máx. 70) y `seo.descripcion` (máx. 160) son lo que se ve al compartir el
   link en WhatsApp o redes.

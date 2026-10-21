@@ -116,7 +116,7 @@ export function explicarError(texto) {
     [/workers\.dev subdomain|register a workers\.dev subdomain|You need to register/i,
       'Tu cuenta de Cloudflare todavía no tiene su dirección gratis de workers.dev.', 'Abre https://dash.cloudflare.com → Workers y Pages (Compute › Workers) una vez: Cloudflare la crea al entrar. Después vuelve a publicar.'],
     [/More than one account available|multiple accounts/i,
-      'Tu usuario tiene más de una cuenta de Cloudflare y no sé en cuál publicar.', 'Guarda la cuenta con: node scripts/token.mjs --cuenta <id> (los id salen en `npx wrangler whoami`).'],
+      'Tu usuario tiene más de una cuenta de Cloudflare y no sé en cuál publicar.', 'Elige la cuenta con scripts/token.mjs --cuenta <id> (los id salen en `npx wrangler whoami` o en scripts/preparar.mjs).'],
     [/Hostname .* already has externally managed DNS records|already has (a|existing) (CNAME|DNS)|existing DNS record/i,
       'Ese dominio (o su www) ya tiene un registro DNS que apunta a otro lado.', 'En Cloudflare → tu dominio → DNS, borra el registro A, AAAA o CNAME de ese nombre (el que apunta a tu hosting viejo) y vuelve a publicar.'],
     [/Could not find zone|zone .* not found|not a zone|no zone/i,

@@ -13,7 +13,7 @@
 // prueba (que después borra).
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
-import { argumentos, carpetaProyecto, leerProyecto, guardarEstado, escribirWrangler, zonaDe, fallar, ok, aviso, paso, linea, BASE_ID_LOCAL, nombreCloudflare } from './lib/comun.mjs';
+import { argumentos, carpetaProyecto, leerProyecto, guardarEstado, escribirWrangler, zonaDe, fallar, ok, aviso, paso, linea, BASE_ID_LOCAL, nombreCloudflare, comando, cosas } from './lib/comun.mjs';
 import { armarSitio } from './lib/armado.mjs';
 import { pendientesDe } from './lib/pendientes.mjs';
 import { wrangler, quienSoy, explicarError, leerCredenciales } from './lib/cloudflare.mjs';
@@ -45,8 +45,8 @@ function fallaCloudflare(que, r) {
 paso('Reviso que no le falte nada a la página');
 const { faltan, avisos } = pendientesDe(crudo, marca, { dirFotos: join(dir, 'fotos') });
 if (faltan.length && !args.verificar) {
-  guardarEstado(dir, { pendientes: faltan.length, fase: 'Fase 3/4 · completar la página', siguiente: 'Completar lo que falta (node scripts/revisar.mjs) y publicar.' });
-  console.log(`\n  ✗ No publico todavía: ${faltan.length === 1 ? 'le falta 1 cosa' : `le faltan ${faltan.length} cosas`} a la página.\n`);
+  guardarEstado(dir, { pendientes: faltan.length, ...(estado.publicado ? {} : { fase: 'Fase 3/4 · completar la página', siguiente: `Completar lo que falta (${comando('revisar.mjs', dir)}) y publicar.` }) });
+  console.log(`\n  ✗ No publico todavía: ${faltan.length === 1 ? 'le falta' : 'le faltan'} ${cosas(faltan.length)} a la página.\n`);
   faltan.forEach((f, i) => console.log(`   ${String(i + 1).padStart(2)}. ${f.que}\n       (${f.donde})`));
   console.log('\n  Una página con huecos no se publica: complétalos (o quita lo que no quieras mostrar) y vuelve a publicar.');
   process.exit(3);
@@ -72,7 +72,7 @@ if (args.prueba) {
   ok(`Armé sitio/ (${r.archivos.length} archivos).`);
   for (const a of r.avisos) aviso(a);
   linea('Esto es lo que haría al publicar de verdad:');
-  linea(`  1. Conectarme a Cloudflare (${leerCredenciales()?.token ? 'con tu token guardado' : 'con tu sesión de `npx wrangler login`'}).`);
+  linea(`  1. Conectarme a Cloudflare (${leerCredenciales()?.token ? 'con tu token guardado' : 'con la sesión de `npx wrangler login`, si ya está hecha'}).`);
   linea(`  2. ${estado.base?.id && estado.base.id !== BASE_ID_LOCAL ? 'Usar tu base de registros ' + estado.base.nombre : 'Crear tu base de registros «' + estado.base.nombre + '» (D1)'} y ponerle sus tablas (schema.sql).`);
   linea(`  3. Subir la página «${estado.nombre}» (npx wrangler deploy).`);
   if (dominios.length) linea(`  4. Conectarla a ${dominios.join(' y ')}.`);
@@ -85,7 +85,7 @@ paso('Reviso la conexión con tu cuenta de Cloudflare');
 const yo = quienSoy(dir);
 if (!yo.conectado) fallar('Tu compu no está conectada a Cloudflare.', 'Conéctala con `npx wrangler login` (un clic en el navegador) o guarda tu token con scripts/token.mjs. Guía: walkthroughs/02-cuenta-cloudflare.md y 03-token-api.md.');
 if (yo.cuentas.length > 1 && !leerCredenciales()?.cuenta?.id && !process.env.CLOUDFLARE_ACCOUNT_ID) {
-  fallar('Tu usuario tiene varias cuentas de Cloudflare y no sé en cuál publicar.', 'Elige una (sirve con token o con la sesión de `wrangler login`):\n' + yo.cuentas.map((c) => `${c.nombre}: node scripts/token.mjs --cuenta ${c.id}`).join('\n'));
+  fallar('Tu usuario tiene varias cuentas de Cloudflare y no sé en cuál publicar.', 'Elige una (sirve con token o con la sesión de `wrangler login`):\n' + yo.cuentas.map((c) => `${c.nombre}: ${comando('token.mjs', '', '--cuenta ' + c.id)}`).join('\n'));
 }
 ok(`Conectada${yo.correo ? ' como ' + yo.correo : ''}${yo.cuentas[0] ? ' · cuenta ' + yo.cuentas[0].nombre : ''}.`);
 
@@ -143,7 +143,7 @@ if (!args.verificar) {
   ok(`Página subida${url ? ': ' + url : ''}.`);
   guardarEstado(dir, { url, publicado: new Date().toISOString(), pixel: r.plan.pixel?.meta || '', pendientes: 0 });
 }
-if (!url && !dominios.length) fallar('Subí la página pero Cloudflare no me dijo su dirección.', 'Mírala en https://dash.cloudflare.com → Workers y Pages, o corre: node scripts/publicar.mjs --verificar');
+if (!url && !dominios.length) fallar('Subí la página pero Cloudflare no me dijo su dirección.', `Mírala en https://dash.cloudflare.com → Workers y Pages, o corre: ${comando('publicar.mjs', dir, '--verificar')}`);
 
 // ---------- 5. Comprobar en vivo ----------
 paso('Compruebo que funciona de verdad');
@@ -197,7 +197,7 @@ async function probarRegistro(origen) {
 const resultado = { url, dominios: {} };
 if (url) {
   const c = await comprobar(url, 8);
-  if (!c.ok) fallar(`La página se subió pero no responde bien en ${url}.`, c.fallas.join('\n') + '\nEspera un minuto y corre: node scripts/publicar.mjs --verificar');
+  if (!c.ok) fallar(`La página se subió pero no responde bien en ${url}.`, c.fallas.join('\n') + `\nEspera un minuto y corre: ${comando('publicar.mjs', dir, '--verificar')}`);
   ok(`${url} responde: página, gracias, privacidad, términos y letras.`);
   const reg = await probarRegistro(url);
   if (!reg.ok) fallar('La página carga, pero el formulario no guardó el registro de prueba.', reg.detalle + '\nRevisa walkthroughs/99-problemas.md (base de registros).');
@@ -207,7 +207,7 @@ for (const d of dominios) {
   const c = await comprobar('https://' + d, args.verificar ? 3 : 12);
   resultado.dominios[d] = c.ok ? 'activo' : 'pendiente';
   if (c.ok) ok(`https://${d} responde.`);
-  else aviso(`https://${d} todavía no responde (${c.fallas[0]}). Cloudflare puede tardar unos minutos en crear el certificado. Vuelve a comprobar en 5 minutos con: node scripts/publicar.mjs --verificar`);
+  else aviso(`https://${d} todavía no responde (${c.fallas[0]}). Cloudflare puede tardar unos minutos en crear el certificado. Vuelve a comprobar en 5 minutos con: ${comando('publicar.mjs', dir, '--verificar')}`);
 }
 if (!url && dominios.length && Object.values(resultado.dominios).every((x) => x === 'activo')) {
   const reg = await probarRegistro('https://' + dominios[0]);
@@ -222,8 +222,8 @@ guardarEstado(dir, {
   estado_dominios: resultado.dominios,
   fase: 'Fase 6 · página publicada',
   siguiente: principal || url
-    ? `Tu página está en ${principal ? 'https://' + principal : url}. Puedes pedir cambios y volver a publicar, ver tus registros (registros.mjs) o conectar tu webhook (secreto.mjs).`
-    : 'Comprobar el dominio en unos minutos: node scripts/publicar.mjs --verificar',
+    ? `Tu página está en ${principal ? 'https://' + principal : url}. Puedes pedir cambios y volver a publicar, ver tus registros (${comando('registros.mjs', dir)}) o conectar tu webhook (walkthroughs/06-registros-y-webhook.md).`
+    : `Comprobar el dominio en unos minutos: ${comando('publicar.mjs', dir, '--verificar')}`,
 });
 
 console.log('\n  Listo. Tu página está publicada:');

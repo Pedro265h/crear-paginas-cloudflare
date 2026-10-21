@@ -9,7 +9,7 @@
 // Sin carpeta, usa la carpeta donde estás. No sube nada a internet (eso es publicar.mjs).
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { argumentos, carpetaProyecto, leerProyecto, guardarEstado, fallar, ok, aviso, linea, EJEMPLOS, motor } from './lib/comun.mjs';
+import { argumentos, carpetaProyecto, leerProyecto, guardarEstado, fallar, ok, aviso, linea, EJEMPLOS, motor, comando, cosas } from './lib/comun.mjs';
 import { armarSitio } from './lib/armado.mjs';
 import { pendientesDe } from './lib/pendientes.mjs';
 
@@ -57,12 +57,15 @@ async function main() {
   guardarEstado(dir, {
     armado: new Date().toISOString(),
     pendientes: faltan.length,
+    ...(estado.publicado ? {} : faltan.length
+      ? { fase: 'Fase 3/4 · completar y ajustar la página', siguiente: `Completar lo que falta (${comando('revisar.mjs', dir)}) y pedir cambios.` }
+      : { fase: 'Fase 4 · cambios (la página ya se puede publicar)', siguiente: `Cuando le guste: publicar (${comando('publicar.mjs', dir)}).` }),
     titulo: r.plan.seo?.titulo || r.plan.marca?.nombre || estado.titulo,
     tipo: r.plan.tipo,
     plantilla: PLANTILLAS[r.plan.tema.plantilla]?.nombre || r.plan.tema.plantilla,
   });
   resumen(r, salida);
-  if (faltan.length) aviso(`Quedan ${faltan.length} cosas por completar${modo === 'vista' ? ' (en la vista se ven marcadas)' : ': en la página publicada no se verían'}. Míralas con: node scripts/revisar.mjs`);
+  if (faltan.length) aviso(`${faltan.length === 1 ? 'Queda' : 'Quedan'} ${cosas(faltan.length)} por completar${modo === 'vista' ? ' (en la vista se ven marcadas)' : ': en la página publicada no se verían'}. Lista: ${comando('revisar.mjs', dir)}`);
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1]).href) await main();

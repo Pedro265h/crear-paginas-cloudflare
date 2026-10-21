@@ -12,7 +12,7 @@ import { copyFileSync, cpSync, existsSync, mkdirSync, readFileSync, readdirSync,
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import { argumentos, carpetaProyecto, leerProyecto, fallar, ok, aviso, linea, abrir, EJEMPLOS, SKILL, motor } from './lib/comun.mjs';
+import { argumentos, carpetaProyecto, leerProyecto, fallar, ok, aviso, linea, abrir, EJEMPLOS, SKILL, motor, comando, cosas } from './lib/comun.mjs';
 import { armarSitio } from './lib/armado.mjs';
 import { pendientesDe } from './lib/pendientes.mjs';
 
@@ -55,7 +55,7 @@ async function servir(raiz) {
       }
     }
   }
-  fallar('No pude prender la vista previa.', 'Cierra otras vistas previas (node scripts/vista.mjs --parar) y vuelve a intentar.');
+  fallar('No pude prender la vista previa.', `Apaga las otras vistas previas (${comando('vista.mjs', '', '--parar')}) y vuelve a intentar.`);
 }
 
 async function mostrar(url, que, recarga = true) {
@@ -132,7 +132,7 @@ async function main() {
   const url = await servir(resolve(salida));
   await mostrar(url, 'Tu página (vista previa)');
   linea(`También: ${url}/gracias · ${url}/privacidad · ${url}/terminos`);
-  if (faltan.length) aviso(`Quedan ${faltan.length} cosas por completar (se ven marcadas en la página). Lista: node scripts/revisar.mjs`);
+  if (faltan.length) aviso(`${faltan.length === 1 ? 'Queda' : 'Quedan'} ${cosas(faltan.length)} por completar (se ven marcadas en la página). Lista: ${comando('revisar.mjs', dir)}`);
 }
 
 const escHTML = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -163,7 +163,7 @@ main{max-width:1240px;margin:0 auto;padding:24px 20px 60px;display:grid;gap:22px
 .b{margin-top:auto!important;padding-top:6px;display:flex;gap:10px}.b a,.b button{font:inherit;font-size:.9rem;padding:9px 14px;border-radius:999px;border:1px solid #3a404b;background:#1e2128;color:#fff;text-decoration:none;cursor:pointer}
 .b a{background:#fff;color:#111;border-color:#fff;font-weight:600}
 </style></head><body>
-<header><h1>Elige el diseño de tu página</h1><p>Es la misma página con las 5 plantillas. El contenido es de ejemplo (${escHTML(base.negocio)}, un negocio ficticio): en la tuya van tu oferta, tus colores y tus fotos. Toca «Ver completa» para recorrerla.</p></header>
+<header><h1>Elige el diseño de tu página</h1><p>Es la misma página con las 5 plantillas. El contenido es de un negocio ficticio («${escHTML(base.negocio)}»): en la tuya van tu oferta, tus colores y tus fotos. Toca «Ver completa» para recorrerla.</p></header>
 <main>
 ${tarjetas}
 </main>
